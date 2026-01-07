@@ -3,10 +3,10 @@
     <div class="container">
       <div class="hero-profile">
         <img
-          src="/images/profile.jpg"
+          :src="profileImage"
           :alt="t('common.hero.name') + '的照片'"
           class="profile-photo"
-          @click="$emit('openPhotoModal', '/images/profile.jpg')"
+          @click="$emit('openPhotoModal', profileImage)"
         />
       </div>
       <h1>{{ t('common.hero.name') }}</h1>
@@ -25,6 +25,8 @@
 import { useLanguage } from '../composables/useLanguage'
 
 const { t } = useLanguage()
+const baseUrl = import.meta.env.BASE_URL
+const profileImage = `${baseUrl}images/profile.jpg`
 
 defineEmits<{
   openPhotoModal: [imageSrc: string]

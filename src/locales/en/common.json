@@ -1,0 +1,24 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "hero": {
+    "name": "潘昱如",
+    "nameEn": "Yu-Ru Pan",
+    "title": "Full Stack Developer",
+    "subtitle": "Focused on Modern Web Development × Cloud Architecture × System Optimization",
+    "aboutMe": "About Me",
+    "viewProjects": "View Projects"
+  },
+  "footer": {
+    "copyright": "© 2026 Ruru's Portfolio. All rights reserved.",
+    "madeWith": "Built with Vue 3 + TypeScript + Vite"
+  },
+  "modal": {
+    "imageAlt": "Enlarged image",
+    "hint": "Press ESC to close"
+  }
+}

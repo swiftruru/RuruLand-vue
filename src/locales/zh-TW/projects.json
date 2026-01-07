@@ -1,0 +1,51 @@
+{
+  "title": "我的作品集",
+  "viewWebsite": "查看網站",
+  "techStack": "技術棧",
+  "highlights": "技術亮點",
+  "perfume": {
+    "title": "FLORIS 香水電商平台",
+    "url": "perfume.azurewebsites.net",
+    "description": "透過與組員協作，完成一個販售香水的電商平台，藉此熟悉後端框架運用、設計模型、API 撰寫與前端網頁的資料傳輸。",
+    "responsibilities": {
+      "title": "負責項目",
+      "item1": "資料表設計與 SQL 查詢優化",
+      "item2": "商品列表與商品詳情頁面開發",
+      "item3": "購物車功能實作與會員中心設計",
+      "item4": "後台訂單管理系統"
+    },
+    "techStack": {
+      "tech1": "C#",
+      "tech2": "ASP.NET MVC",
+      "tech3": "T-SQL",
+      "tech4": "Razor",
+      "tech5": "JavaScript",
+      "tech6": "HTML/CSS",
+      "tech7": "Sass"
+    }
+  },
+  "django": {
+    "title": "RuDjango 技術部落格平台",
+    "url": "django.swift.moe",
+    "description": "獨立開發並部署的全端部落格系統，採用現代化 Python Web 框架與雲端容器化部署架構。專案涵蓋完整的 CRUD 操作、使用者認證授權、即時通訊、安全性管控等企業級功能，實現從開發到生產環境的完整 DevOps 流程。",
+    "features": {
+      "title": "核心功能",
+      "item1": "完整的 CRUD 操作與 RESTful API 設計",
+      "item2": "使用者身份驗證與權限管理系統",
+      "item3": "WebSocket 即時私訊功能",
+      "item4": "IP 安全管控與登入異常偵測"
+    },
+    "techStack": {
+      "tech1": "Python 3.x",
+      "tech2": "Django 6.0",
+      "tech3": "PostgreSQL 17",
+      "tech4": "Docker",
+      "tech5": "Railway (CI/CD)"
+    },
+    "highlights": {
+      "item1": "Django ORM 複雜查詢優化（select_related、prefetch_related）",
+      "item2": "自訂 Middleware 處理 IP 過濾與請求攔截",
+      "item3": "WebSocket 長連接實現即時雙向通訊"
+    }
+  }
+}

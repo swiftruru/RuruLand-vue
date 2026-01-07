@@ -1,0 +1,242 @@
+/* About Section Styles */
+.about {
+    padding: 3rem 0;
+    background: transparent;
+}
+
+.about .container {
+    background: #fdfdf8;
+    padding: 4rem 3rem;
+    border-radius: 4px;
+    box-shadow:
+        0 1px 3px rgba(0, 0, 0, 0.12),
+        0 8px 24px rgba(0, 0, 0, 0.08),
+        0 16px 32px rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(26, 95, 63, 0.08);
+    position: relative;
+}
+
+.about .container::before {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    background: linear-gradient(135deg, rgba(26, 95, 63, 0.03) 0%, transparent 50%);
+    border-radius: 4px;
+    z-index: -1;
+}
+
+/* 膠帶裝飾 */
+.about .container::after {
+    content: '';
+    position: absolute;
+    width: 120px;
+    height: 35px;
+    top: -15px;
+    left: 60px;
+    transform: rotate(-3deg);
+    background: linear-gradient(
+        135deg,
+        rgba(255, 200, 180, 0.75) 0%,
+        rgba(255, 215, 195, 0.75) 50%,
+        rgba(255, 200, 180, 0.75) 100%
+    );
+    background-image:
+        repeating-linear-gradient(
+            90deg,
+            transparent,
+            transparent 2px,
+            rgba(255, 255, 255, 0.1) 2px,
+            rgba(255, 255, 255, 0.1) 3px
+        );
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.5),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.1),
+        0 2px 4px rgba(0, 0, 0, 0.15);
+    z-index: 10;
+    pointer-events: none;
+}
+
+.about-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.about-intro {
+    margin-bottom: 3rem;
+}
+
+.intro-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-primary);
+    text-align: left;
+    padding: 2.5rem;
+    background: white;
+    border-radius: 2px;
+    border-left: 4px solid var(--primary-color);
+    box-shadow:
+        0 1px 3px rgba(0, 0, 0, 0.08),
+        0 4px 12px rgba(0, 0, 0, 0.05);
+    position: relative;
+    letter-spacing: 0.3px;
+    background-image:
+        linear-gradient(0deg, transparent 24%, rgba(255, 255, 255, .05) 25%, rgba(255, 255, 255, .05) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, .05) 75%, rgba(255, 255, 255, .05) 76%, transparent 77%, transparent),
+        linear-gradient(90deg, transparent 24%, rgba(255, 255, 255, .05) 25%, rgba(255, 255, 255, .05) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, .05) 75%, rgba(255, 255, 255, .05) 76%, transparent 77%, transparent);
+    background-size: 50px 50px;
+}
+
+.intro-text::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -4px;
+    width: 4px;
+    height: 40px;
+    background: var(--secondary-color);
+    border-radius: 2px 0 0 0;
+}
+
+.skills-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.skill-category {
+    background: white;
+    padding: 2rem;
+    border-radius: 2px;
+    box-shadow:
+        0 1px 3px rgba(0, 0, 0, 0.08),
+        0 4px 12px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(26, 95, 63, 0.12);
+    transition: all 0.3s ease;
+    position: relative;
+    background-image:
+        linear-gradient(0deg, transparent 24%, rgba(255, 255, 255, .05) 25%, rgba(255, 255, 255, .05) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, .05) 75%, rgba(255, 255, 255, .05) 76%, transparent 77%, transparent),
+        linear-gradient(90deg, transparent 24%, rgba(255, 255, 255, .05) 25%, rgba(255, 255, 255, .05) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, .05) 75%, rgba(255, 255, 255, .05) 76%, transparent 77%, transparent);
+    background-size: 50px 50px;
+}
+
+/* 技能卡片的膠帶 */
+.skill-category::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: 15px;
+    width: 50px;
+    height: 18px;
+    background: linear-gradient(
+        135deg,
+        rgba(255, 240, 150, 0.8) 0%,
+        rgba(255, 245, 170, 0.8) 50%,
+        rgba(255, 240, 150, 0.8) 100%
+    );
+    background-image:
+        repeating-linear-gradient(
+            90deg,
+            transparent,
+            transparent 2px,
+            rgba(255, 255, 255, 0.15) 2px,
+            rgba(255, 255, 255, 0.15) 3px
+        );
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.4),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.1),
+        0 1px 3px rgba(0, 0, 0, 0.15);
+    transform: rotate(3deg);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.skill-category:hover {
+    transform: translateY(-3px);
+    box-shadow:
+        0 2px 6px rgba(0, 0, 0, 0.1),
+        0 8px 20px rgba(0, 0, 0, 0.08);
+    border-color: var(--primary-color);
+}
+
+.skill-category h3 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.skill-category h3::before {
+    content: '▪';
+    color: var(--primary-color);
+    margin-right: 0.5rem;
+    font-size: 1.2em;
+}
+
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.tech-tag {
+    background: white;
+    color: var(--text-primary);
+    padding: 0.5rem 1.2rem;
+    border-radius: 25px;
+    font-size: 0.85rem;
+    border: 1.5px solid var(--primary-color);
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.tech-tag:hover {
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(26, 95, 63, 0.25);
+}
+
+.experience-list {
+    list-style: none;
+    padding: 0;
+}
+
+.experience-list li {
+    padding: 0.8rem 0;
+    color: var(--text-secondary);
+    position: relative;
+    padding-left: 2rem;
+    line-height: 1.8;
+}
+
+.experience-list li::before {
+    content: '✓';
+    color: var(--primary-color);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .skills-section {
+        grid-template-columns: 1fr;
+    }
+
+    .intro-text {
+        font-size: 1rem;
+        padding: 1.5rem;
+    }
+
+    /* 手機版移除膠帶效果保持簡潔 */
+    .about .container::after,
+    .skill-category::before {
+        display: none;
+    }
+}

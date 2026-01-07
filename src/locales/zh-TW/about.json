@@ -1,0 +1,16 @@
+{
+  "title": "關於我",
+  "intro": "具備 2 年以上金流系統開發實戰經驗,現就讀國立台北護理健康大學資訊管理碩士班。擅長 .NET Framework / MVC / Core 全系列技術及前端 Vue.js / JavaScript 開發。曾主導金流核心系統開發與舊系統現代化重構，並協助取得 PCI DSS 4.0 國際認證。熟悉 Git 版本控制、Azure DevOps CI/CD 及 GCP 雲端平台。具優良 TA 經驗，樂於技術分享與團隊協作。",
+  "skills": {
+    "backend": "💻 後端技術",
+    "frontend": "🎨 前端技術",
+    "tools": "🛠️ 開發工具",
+    "experience": "🏆 專業認證與經驗"
+  },
+  "experienceList": {
+    "exp1": "主導金流核心系統開發與現代化重構",
+    "exp2": "協助取得 PCI DSS 4.0 國際安全認證",
+    "exp3": "2 年以上金流系統開發實戰經驗",
+    "exp4": "國立台北護理健康大學資訊管理碩士班在讀"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "title": "About Me",
+  "intro": "With over 2 years of hands-on experience in payment system development, currently pursuing a Master's degree in Information Management at National Taipei University of Nursing and Health Sciences. Proficient in the complete .NET Framework / MVC / Core technology stack and frontend development with Vue.js / JavaScript. Led payment core system development and legacy system modernization, contributed to achieving PCI DSS 4.0 international certification. Skilled in Git version control, Azure DevOps CI/CD, and GCP cloud platform. Experienced TA with a passion for technical sharing and team collaboration.",
+  "skills": {
+    "backend": "💻 Backend",
+    "frontend": "🎨 Frontend",
+    "tools": "🛠️ Dev Tools",
+    "experience": "🏆 Experience & Certifications"
+  },
+  "experienceList": {
+    "exp1": "Led payment core system development and modernization",
+    "exp2": "Contributed to achieving PCI DSS 4.0 certification",
+    "exp3": "2+ years of payment system development experience",
+    "exp4": "M.S. in Information Management (in progress)"
+  }
+}

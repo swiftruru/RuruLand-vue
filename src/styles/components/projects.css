@@ -1,0 +1,346 @@
+/* Projects Section Styles */
+.projects {
+    padding: 3rem 0;
+    background: transparent;
+}
+
+.projects .container {
+    background: #fdfdf8;
+    padding: 4rem 3rem;
+    border-radius: 4px;
+    box-shadow:
+        0 1px 3px rgba(0, 0, 0, 0.12),
+        0 8px 24px rgba(0, 0, 0, 0.08),
+        0 16px 32px rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(26, 95, 63, 0.08);
+    position: relative;
+}
+
+.projects .container::before {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    background: linear-gradient(135deg, rgba(26, 95, 63, 0.03) 0%, transparent 50%);
+    border-radius: 4px;
+    z-index: -1;
+}
+
+/* 膠帶裝飾 */
+.projects .container::after {
+    content: '';
+    position: absolute;
+    width: 120px;
+    height: 35px;
+    top: -15px;
+    right: 100px;
+    transform: rotate(4deg);
+    background: linear-gradient(
+        135deg,
+        rgba(180, 220, 255, 0.75) 0%,
+        rgba(200, 230, 255, 0.75) 50%,
+        rgba(180, 220, 255, 0.75) 100%
+    );
+    background-image:
+        repeating-linear-gradient(
+            90deg,
+            transparent,
+            transparent 2px,
+            rgba(255, 255, 255, 0.1) 2px,
+            rgba(255, 255, 255, 0.1) 3px
+        );
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.5),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.1),
+        0 2px 4px rgba(0, 0, 0, 0.15);
+    z-index: 10;
+    pointer-events: none;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 3rem;
+    margin-top: 3rem;
+}
+
+.project-card {
+    background: var(--card-bg);
+    border-radius: 2px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(26, 95, 63, 0.12);
+    box-shadow:
+        0 1px 3px rgba(0, 0, 0, 0.08),
+        0 4px 12px rgba(0, 0, 0, 0.05);
+    position: relative;
+    background-image:
+        linear-gradient(0deg, transparent 24%, rgba(255, 255, 255, .05) 25%, rgba(255, 255, 255, .05) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, .05) 75%, rgba(255, 255, 255, .05) 76%, transparent 77%, transparent),
+        linear-gradient(90deg, transparent 24%, rgba(255, 255, 255, .05) 25%, rgba(255, 255, 255, .05) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, .05) 75%, rgba(255, 255, 255, .05) 76%, transparent 77%, transparent);
+    background-size: 50px 50px;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow:
+        0 2px 6px rgba(0, 0, 0, 0.1),
+        0 10px 25px rgba(0, 0, 0, 0.1);
+    border-color: var(--primary-color);
+}
+
+/* 專案卡片的膠帶 */
+.project-card::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    right: 20px;
+    width: 60px;
+    height: 20px;
+    background: linear-gradient(
+        135deg,
+        rgba(255, 180, 200, 0.8) 0%,
+        rgba(255, 200, 220, 0.8) 50%,
+        rgba(255, 180, 200, 0.8) 100%
+    );
+    background-image:
+        repeating-linear-gradient(
+            90deg,
+            transparent,
+            transparent 2px,
+            rgba(255, 255, 255, 0.15) 2px,
+            rgba(255, 255, 255, 0.15) 3px
+        );
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.4),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.1),
+        0 1px 3px rgba(0, 0, 0, 0.15);
+    transform: rotate(-2deg);
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* 專案圖片 */
+.project-image {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    background: var(--dark-bg);
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.project-card:hover .project-image img {
+    transform: scale(1.1);
+}
+
+.project-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(26, 95, 63, 0.75) 0%, rgba(45, 122, 82, 0.75) 100%);
+    backdrop-filter: blur(5px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.project-card:hover .project-overlay {
+    opacity: 1;
+}
+
+.overlay-link {
+    padding: 1rem 2.5rem;
+    background: white;
+    color: var(--primary-color);
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    border: 2px solid white;
+}
+
+.project-card:hover .overlay-link {
+    transform: translateY(0);
+}
+
+.overlay-link:hover {
+    background: var(--primary-color);
+    color: white;
+    transform: translateY(0) scale(1.05);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.project-header {
+    padding: 2rem;
+    background: var(--gradient-1);
+    position: relative;
+    overflow: hidden;
+    color: white;
+}
+
+.project-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, transparent 0%, rgba(255, 255, 255, 0.1) 100%);
+    pointer-events: none;
+}
+
+.project-header h3 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+.project-header h3::before {
+    content: '▪';
+    color: white;
+    margin-right: 0.5rem;
+    font-size: 1.2em;
+}
+
+.project-url {
+    color: rgba(255, 255, 255, 0.95);
+    text-decoration: none;
+    font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    position: relative;
+    z-index: 1;
+    transition: opacity 0.3s ease;
+}
+
+.project-url:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+.project-content {
+    padding: 2rem;
+}
+
+.project-description {
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+.project-section {
+    margin-bottom: 1.5rem;
+}
+
+.project-section h4 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.project-section h4::before {
+    content: '▪';
+    color: var(--primary-color);
+    margin-right: 0.5rem;
+    font-size: 1.2em;
+}
+
+.project-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.project-section ul li {
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.project-section ul li::before {
+    content: '•';
+    color: var(--primary-color);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+.highlight-section {
+    background: rgba(232, 245, 233, 0.4);
+    padding: 1.5rem;
+    border-radius: 2px;
+    border-left: 4px solid var(--primary-color);
+    margin-top: 1rem;
+    box-shadow:
+        0 1px 2px rgba(0, 0, 0, 0.05),
+        0 2px 8px rgba(0, 0, 0, 0.04);
+    transition: all 0.3s ease;
+}
+
+.highlight-section:hover {
+    transform: translateX(3px);
+    box-shadow:
+        0 2px 4px rgba(0, 0, 0, 0.08),
+        0 4px 12px rgba(0, 0, 0, 0.06);
+    background: rgba(232, 245, 233, 0.6);
+}
+
+.highlight-section h4 {
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.project-link {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 0.9rem 2rem;
+    background: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    box-shadow: 0 4px 15px var(--shadow-color);
+    border: 2px solid var(--primary-color);
+}
+
+.project-link:hover {
+    transform: translateX(5px);
+    box-shadow: 0 6px 20px var(--shadow-color);
+    background: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-image {
+        height: 200px;
+    }
+
+    /* 手機版移除膠帶效果保持簡潔 */
+    .projects .container::after,
+    .project-card::before {
+        display: none;
+    }
+}

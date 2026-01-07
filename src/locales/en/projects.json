@@ -1,0 +1,51 @@
+{
+  "title": "My Projects",
+  "viewWebsite": "View Website",
+  "techStack": "Tech Stack",
+  "highlights": "Highlights",
+  "perfume": {
+    "title": "FLORIS Perfume E-commerce Platform",
+    "url": "perfume.azurewebsites.net",
+    "description": "Collaborated with team members to complete a perfume e-commerce platform, familiarizing with backend framework application, model design, API development, and frontend data transmission.",
+    "responsibilities": {
+      "title": "Responsibilities",
+      "item1": "Database design and SQL query optimization",
+      "item2": "Product list and detail page development",
+      "item3": "Shopping cart implementation and member center design",
+      "item4": "Backend order management system"
+    },
+    "techStack": {
+      "tech1": "C#",
+      "tech2": "ASP.NET MVC",
+      "tech3": "T-SQL",
+      "tech4": "Razor",
+      "tech5": "JavaScript",
+      "tech6": "HTML/CSS",
+      "tech7": "Sass"
+    }
+  },
+  "django": {
+    "title": "RuDjango Tech Blog Platform",
+    "url": "django.swift.moe",
+    "description": "Independently developed and deployed full-stack blog system using modern Python web framework and cloud containerized deployment architecture. The project covers complete CRUD operations, user authentication and authorization, real-time communication, security management and other enterprise-level functions, achieving a complete DevOps process from development to production environment.",
+    "features": {
+      "title": "Core Features",
+      "item1": "Complete CRUD operations and RESTful API design",
+      "item2": "User authentication and permission management system",
+      "item3": "WebSocket real-time messaging functionality",
+      "item4": "IP security control and login anomaly detection"
+    },
+    "techStack": {
+      "tech1": "Python 3.x",
+      "tech2": "Django 6.0",
+      "tech3": "PostgreSQL 17",
+      "tech4": "Docker",
+      "tech5": "Railway (CI/CD)"
+    },
+    "highlights": {
+      "item1": "Django ORM complex query optimization (select_related, prefetch_related)",
+      "item2": "Custom Middleware for IP filtering and request interception",
+      "item3": "WebSocket long connection for real-time bidirectional communication"
+    }
+  }
+}

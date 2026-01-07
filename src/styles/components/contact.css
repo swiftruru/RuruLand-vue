@@ -1,0 +1,240 @@
+/* Contact Section Styles */
+.contact {
+    padding: 3rem 0;
+    background: transparent;
+}
+
+.contact .container {
+    background: #fdfdf8;
+    padding: 4rem 3rem;
+    border-radius: 4px;
+    box-shadow:
+        0 1px 3px rgba(0, 0, 0, 0.12),
+        0 8px 24px rgba(0, 0, 0, 0.08),
+        0 16px 32px rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(26, 95, 63, 0.08);
+    position: relative;
+}
+
+.contact .container::before {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    background: linear-gradient(135deg, rgba(26, 95, 63, 0.03) 0%, transparent 50%);
+    border-radius: 4px;
+    z-index: -1;
+}
+
+/* 膠帶裝飾 */
+.contact .container::after {
+    content: '';
+    position: absolute;
+    width: 120px;
+    height: 35px;
+    top: -15px;
+    right: 60px;
+    transform: rotate(-4deg);
+    background: linear-gradient(
+        135deg,
+        rgba(200, 180, 255, 0.75) 0%,
+        rgba(215, 195, 255, 0.75) 50%,
+        rgba(200, 180, 255, 0.75) 100%
+    );
+    background-image:
+        repeating-linear-gradient(
+            90deg,
+            transparent,
+            transparent 2px,
+            rgba(255, 255, 255, 0.1) 2px,
+            rgba(255, 255, 255, 0.1) 3px
+        );
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.5),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.1),
+        0 2px 4px rgba(0, 0, 0, 0.15);
+    z-index: 10;
+    pointer-events: none;
+}
+
+.contact-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.contact-intro {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.contact-intro p {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.contact-item {
+    background: white;
+    padding: 2rem;
+    border-radius: 2px;
+    box-shadow:
+        0 1px 3px rgba(0, 0, 0, 0.08),
+        0 4px 12px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(26, 95, 63, 0.12);
+    transition: all 0.3s ease;
+    position: relative;
+    background-image:
+        linear-gradient(0deg, transparent 24%, rgba(255, 255, 255, .05) 25%, rgba(255, 255, 255, .05) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, .05) 75%, rgba(255, 255, 255, .05) 76%, transparent 77%, transparent),
+        linear-gradient(90deg, transparent 24%, rgba(255, 255, 255, .05) 25%, rgba(255, 255, 255, .05) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, .05) 75%, rgba(255, 255, 255, .05) 76%, transparent 77%, transparent);
+    background-size: 50px 50px;
+}
+
+/* 聯絡卡片的膠帶 */
+.contact-item::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: 20px;
+    width: 50px;
+    height: 18px;
+    background: linear-gradient(
+        135deg,
+        rgba(180, 255, 200, 0.8) 0%,
+        rgba(195, 255, 215, 0.8) 50%,
+        rgba(180, 255, 200, 0.8) 100%
+    );
+    background-image:
+        repeating-linear-gradient(
+            90deg,
+            transparent,
+            transparent 2px,
+            rgba(255, 255, 255, 0.15) 2px,
+            rgba(255, 255, 255, 0.15) 3px
+        );
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.4),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.1),
+        0 1px 3px rgba(0, 0, 0, 0.15);
+    transform: rotate(-3deg);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.contact-item:hover {
+    transform: translateY(-3px);
+    box-shadow:
+        0 2px 6px rgba(0, 0, 0, 0.1),
+        0 8px 20px rgba(0, 0, 0, 0.08);
+    border-color: var(--primary-color);
+}
+
+.contact-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.contact-item h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.contact-item h3::before {
+    content: '▪';
+    color: var(--primary-color);
+    margin-right: 0.5rem;
+    font-size: 1.2em;
+}
+
+.contact-link {
+    display: inline-block;
+    color: var(--text-secondary);
+    text-decoration: none;
+    padding: 0.8rem 1.5rem;
+    background: rgba(232, 245, 233, 0.4);
+    border-radius: 25px;
+    border: 1.5px solid var(--primary-color);
+    transition: all 0.3s ease;
+    font-weight: 500;
+    margin-top: 0.5rem;
+}
+
+.contact-link:hover {
+    background: var(--primary-color);
+    color: white;
+    transform: translateX(5px);
+    box-shadow: 0 4px 12px rgba(26, 95, 63, 0.25);
+}
+
+.contact-text {
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* Social Links Section */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 2px solid rgba(26, 95, 63, 0.1);
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background: white;
+    border-radius: 50%;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 1.8rem;
+    border: 2px solid var(--primary-color);
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.social-link:hover {
+    background: var(--primary-color);
+    color: white;
+    transform: translateY(-5px) rotate(5deg);
+    box-shadow: 0 6px 20px rgba(26, 95, 63, 0.3);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .social-links {
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .social-link {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+    }
+
+    /* 手機版移除膠帶效果保持簡潔 */
+    .contact .container::after,
+    .contact-item::before {
+        display: none;
+    }
+}

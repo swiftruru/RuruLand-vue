@@ -48,9 +48,9 @@ export function useScrollAnimation() {
 
     // 為所有錨點連結加入平滑滾動
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
+      anchor.addEventListener('click', (e) => {
         e.preventDefault()
-        const href = (this as HTMLAnchorElement).getAttribute('href')
+        const href = (anchor as HTMLAnchorElement).getAttribute('href')
         if (href) {
           smoothScrollTo(href)
         }

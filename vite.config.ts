@@ -6,8 +6,10 @@ import vueDevTools from 'vite-plugin-vue-devtools'
 
 // https://vite.dev/config/
 export default defineConfig({
-  // GitHub Pages base path (https://swiftruru.github.io/RuruLand-vue/)
-  base: '/RuruLand-vue/',
+  // GitHub Pages base path
+  // Use '/' for custom domain (ruruland.swift.moe)
+  // Use '/RuruLand-vue/' for github.io subdirectory
+  base: process.env.VITE_BASE_URL || '/',
   plugins: [
     vue(),
     vueDevTools(),

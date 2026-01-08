@@ -31,6 +31,9 @@
     <!-- Footer -->
     <footer>
       <div class="container">
+        <!-- 社群分享 -->
+        <SocialShare />
+
         <p>{{ t('common.footer.copyright') }}</p>
         <p>{{ t('common.footer.madeWith') }}</p>
       </div>
@@ -46,10 +49,12 @@ import ProjectsSection from './components/ProjectsSection.vue'
 import ContactSection from './components/ContactSection.vue'
 import PhotoModal from './components/PhotoModal.vue'
 import PageLoader from './components/PageLoader.vue'
+import SocialShare from './components/SocialShare.vue'
 import { useLanguage } from './composables/useLanguage'
 import { usePhotoModal } from './composables/usePhotoModal'
 import { useScrollAnimation } from './composables/useScrollAnimation'
 import { useCursorEffect } from './composables/useCursorEffect'
+import { useGoogleAnalytics } from './composables/useGoogleAnalytics'
 
 // 語言切換
 const { t } = useLanguage()
@@ -66,4 +71,7 @@ useScrollAnimation()
 
 // 自訂游標與粒子效果
 useCursorEffect()
+
+// Google Analytics
+useGoogleAnalytics()
 </script>

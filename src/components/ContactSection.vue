@@ -13,7 +13,7 @@
           <div class="contact-item">
             <span class="contact-icon">📧</span>
             <h3>{{ t('contact.email.title') }}</h3>
-            <a href="mailto:ruru@swift.moe" class="contact-link">
+            <a href="mailto:ruru@swift.moe" class="contact-link" @click="trackContact('email')">
               {{ t('contact.email.address') }}
             </a>
           </div>
@@ -41,6 +41,7 @@
               target="_blank"
               rel="noopener noreferrer"
               class="contact-link"
+              @click="trackContact('github')"
             >
               {{ t('contact.github.username') }}
             </a>
@@ -61,6 +62,7 @@
             class="social-link"
             aria-label="Email"
             title="Email"
+            @click="trackContact('email')"
           >
             📧
           </a>
@@ -71,6 +73,7 @@
             class="social-link"
             aria-label="Website"
             title="Website"
+            @click="trackContact('website')"
           >
             🌐
           </a>
@@ -81,6 +84,7 @@
             class="social-link"
             aria-label="GitHub"
             title="GitHub"
+            @click="trackContact('github')"
           >
             💻
           </a>
@@ -92,6 +96,7 @@
 
 <script setup lang="ts">
 import { useLanguage } from '../composables/useLanguage'
+import { trackContact } from '../composables/useGoogleAnalytics'
 
 const { t } = useLanguage()
 </script>

@@ -53,6 +53,12 @@
 - 🧩 Composable 邏輯復用模式
 - 📦 Pinia 狀態管理
 
+### 📊 數據分析
+- 📈 Google Analytics 4 整合
+- 🎯 自動追蹤頁面瀏覽
+- 👆 追蹤社群分享互動
+- 📧 追蹤聯絡方式點擊
+
 ---
 
 ## 🏗️ 技術架構
@@ -89,7 +95,8 @@
     ├── useLanguage.ts               語言切換
     ├── useMenu.ts                   選單控制
     ├── useScrollAnimation.ts        滾動動畫
-    └── usePhotoModal.ts             Modal 控制
+    ├── usePhotoModal.ts             Modal 控制
+    └── useGoogleAnalytics.ts        數據追蹤
 ```
 
 ---
@@ -111,12 +118,29 @@ cd RuruLand-vue
 # 2. 安裝依賴
 npm install
 
-# 3. 啟動開發伺服器
+# 3. 設定環境變數
+cp .env.example .env
+# 編輯 .env 檔案，填入你的 Google Analytics Measurement ID
+
+# 4. 啟動開發伺服器
 npm run dev
 
-# 4. 開啟瀏覽器訪問
+# 5. 開啟瀏覽器訪問
 # http://localhost:5173/
 ```
+
+### 環境變數設定
+
+建立 `.env` 檔案並設定以下變數：
+
+```bash
+# Google Analytics 4 Measurement ID
+VITE_GA_MEASUREMENT_ID=G-XXXXXXXXXX
+```
+
+> 💡 **提示**:
+> - 開發環境（`npm run dev`）不會載入 Google Analytics
+> - 生產環境（`npm run build`）會自動載入並追蹤數據
 
 ### 建構生產版本
 

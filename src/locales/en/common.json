@@ -20,5 +20,10 @@
   "modal": {
     "imageAlt": "Enlarged image",
     "hint": "Press ESC to close"
+  },
+  "share": {
+    "title": "Share This Page",
+    "copy": "Copy Link",
+    "copied": "Copied!"
   }
 }

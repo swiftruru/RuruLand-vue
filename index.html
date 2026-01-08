@@ -1,37 +1,63 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="zh-TW" prefix="og: https://ogp.me/ns#">
   <head>
     <meta charset="UTF-8">
+
+    <!-- Favicons -->
     <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png">
     <link rel="icon" type="image/x-icon" href="/images/favicon/favicon.ico">
     <link rel="manifest" href="/images/favicon/site.webmanifest">
     <meta name="theme-color" content="#1a5f3f">
+
+    <!-- Viewport and Mobile -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="潘昱如 - Full Stack Developer 個人作品集">
-    <meta name="keywords" content="潘昱如, Yu-Ru Pan, Full Stack Developer, Web Developer, Vue.js, TypeScript, Portfolio">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="潘昱如 - Full Stack Developer 個人作品集網站，專注於現代網頁開發、雲端架構與系統優化。擁有 2+ 年金流系統開發經驗，熟悉 Vue.js、TypeScript、.NET、Django、Docker 等技術。">
+    <meta name="keywords" content="潘昱如, Yu-Ru Pan, Full Stack Developer, Web Developer, Frontend Developer, Backend Developer, Vue.js, TypeScript, Vite, Pinia, .NET, Django, Python, Docker, Cloud Architecture, System Optimization, PCI DSS, Portfolio, 作品集, 台北, 台灣">
     <meta name="author" content="Yu-Ru Pan">
-    <title>RuruLand Portfolio | 潘昱如</title>
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="googlebot" content="index, follow">
+    <meta name="bingbot" content="index, follow">
+    <meta name="language" content="zh-TW">
+    <meta name="geo.region" content="TW">
+    <meta name="geo.placename" content="Taipei">
+
+    <!-- Title -->
+    <title>RuruLand Portfolio | 潘昱如 - Full Stack Developer | Vue.js × TypeScript × Cloud Architecture</title>
 
     <!-- Open Graph Meta Tags -->
-    <meta property="og:type" content="website">
+    <meta property="og:type" content="profile">
     <meta property="og:url" content="https://ruruland.swift.moe/">
     <meta property="og:title" content="RuruLand Portfolio | 潘昱如 - Full Stack Developer">
-    <meta property="og:description" content="潘昱如的個人作品集網站，專注於現代網頁開發、雲端架構與系統優化">
+    <meta property="og:description" content="潘昱如的個人作品集網站，專注於現代網頁開發、雲端架構與系統優化。擁有 2+ 年金流系統開發經驗，協助取得 PCI DSS 4.0 國際認證。">
     <meta property="og:image" content="https://ruruland.swift.moe/images/loader/yubiko-mascot.png">
+    <meta property="og:image:secure_url" content="https://ruruland.swift.moe/images/loader/yubiko-mascot.png">
+    <meta property="og:image:type" content="image/png">
     <meta property="og:image:width" content="512">
     <meta property="og:image:height" content="512">
+    <meta property="og:image:alt" content="RuruLand Portfolio Logo - Yubiko Mascot">
     <meta property="og:site_name" content="RuruLand Portfolio">
     <meta property="og:locale" content="zh_TW">
     <meta property="og:locale:alternate" content="en_US">
+    <meta property="profile:first_name" content="Yu-Ru">
+    <meta property="profile:last_name" content="Pan">
+    <meta property="profile:username" content="swiftruru">
 
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@swiftruru">
+    <meta name="twitter:creator" content="@swiftruru">
     <meta name="twitter:url" content="https://ruruland.swift.moe/">
     <meta name="twitter:title" content="RuruLand Portfolio | 潘昱如 - Full Stack Developer">
-    <meta name="twitter:description" content="潘昱如的個人作品集網站，專注於現代網頁開發、雲端架構與系統優化">
+    <meta name="twitter:description" content="潘昱如的個人作品集網站，專注於現代網頁開發、雲端架構與系統優化。">
     <meta name="twitter:image" content="https://ruruland.swift.moe/images/loader/yubiko-mascot.png">
+    <meta name="twitter:image:alt" content="RuruLand Portfolio Logo - Yubiko Mascot">
 
     <!-- Canonical URL -->
     <link rel="canonical" href="https://ruruland.swift.moe/">
@@ -43,6 +69,87 @@
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'G-Q4RFNMK35D');
+    </script>
+
+    <!-- Structured Data (Schema.org JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "潘昱如",
+      "alternateName": "Yu-Ru Pan",
+      "url": "https://ruruland.swift.moe",
+      "image": "https://ruruland.swift.moe/images/profile.jpg",
+      "sameAs": [
+        "https://github.com/swiftruru",
+        "https://swift.moe"
+      ],
+      "jobTitle": "Full Stack Developer",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Independent"
+      },
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "國立台北護理健康大學",
+        "alternateName": "National Taipei University of Nursing and Health Sciences"
+      },
+      "knowsAbout": [
+        "Vue.js",
+        "TypeScript",
+        "Full Stack Development",
+        "Web Development",
+        ".NET",
+        "Django",
+        "Docker",
+        "Cloud Architecture",
+        "System Optimization"
+      ],
+      "email": "ruru@swift.moe",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "台北",
+        "addressRegion": "台灣",
+        "addressCountry": "TW"
+      }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "RuruLand Portfolio",
+      "alternateName": "潘昱如作品集",
+      "url": "https://ruruland.swift.moe",
+      "description": "潘昱如的個人作品集網站，專注於現代網頁開發、雲端架構與系統優化",
+      "author": {
+        "@type": "Person",
+        "name": "潘昱如",
+        "alternateName": "Yu-Ru Pan"
+      },
+      "inLanguage": ["zh-TW", "en"],
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://ruruland.swift.moe/#projects?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfilePage",
+      "dateCreated": "2026-01-01T00:00:00+08:00",
+      "dateModified": "2026-01-08T00:00:00+08:00",
+      "mainEntity": {
+        "@type": "Person",
+        "name": "潘昱如",
+        "alternateName": "Yu-Ru Pan",
+        "description": "Full Stack Developer specialized in Vue.js, TypeScript, and modern web technologies"
+      }
+    }
     </script>
   </head>
   <body>

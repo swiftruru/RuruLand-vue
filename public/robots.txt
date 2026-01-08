@@ -1,0 +1,15 @@
+# robots.txt for ruruland.swift.moe
+
+# Allow all crawlers
+User-agent: *
+Allow: /
+
+# Disallow crawling of specific paths (if any)
+# Disallow: /admin/
+# Disallow: /private/
+
+# Sitemap location
+Sitemap: https://ruruland.swift.moe/sitemap.xml
+
+# Crawl-delay (optional, in seconds)
+# Crawl-delay: 1

@@ -59,6 +59,13 @@
 - 👆 追蹤社群分享互動
 - 📧 追蹤聯絡方式點擊
 
+### 🔍 SEO 優化
+- 🗺️ Sitemap.xml 自動生成
+- 🤖 Robots.txt 爬蟲指引
+- 📋 Schema.org 結構化資料（Person, WebSite, ProfilePage）
+- 🏷️ 完整 Meta Tags（Open Graph, Twitter Card）
+- 🌐 多語系 SEO 支援
+
 ---
 
 ## 🏗️ 技術架構

@@ -14,7 +14,7 @@ export function useLanguage() {
    * 獲取語言按鈕顯示文字
    */
   const languageButtonText = computed(() => {
-    return locale.value === 'zh-TW' ? 'EN' : '中'
+    return locale.value === 'zh-TW' ? 'English' : '正體中文'
   })
 
   /**

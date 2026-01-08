@@ -1,5 +1,10 @@
 <template>
   <div id="app">
+    <!-- 跳過連結 -->
+    <a href="#main-content" class="skip-link">
+      {{ t('common.accessibility.skipToMain') }}
+    </a>
+
     <!-- 頁面載入動畫 -->
     <PageLoader />
 
@@ -7,7 +12,7 @@
     <NavigationBar />
 
     <!-- 主要內容 -->
-    <main>
+    <main id="main-content" role="main">
       <!-- Hero 區塊 -->
       <HeroSection @open-photo-modal="openPhotoModal" />
 
@@ -40,7 +45,7 @@
     />
 
     <!-- Footer -->
-    <footer>
+    <footer role="contentinfo">
       <div class="container">
         <!-- 社群分享 -->
         <SocialShare />
@@ -49,6 +54,9 @@
         <p>{{ t('common.footer.madeWith') }}</p>
       </div>
     </footer>
+
+    <!-- 無障礙控制 -->
+    <AccessibilityControls />
   </div>
 </template>
 
@@ -62,6 +70,7 @@ import PhotoModal from './components/PhotoModal.vue'
 import PageLoader from './components/PageLoader.vue'
 import SocialShare from './components/SocialShare.vue'
 import ProjectDetailModal from './components/ProjectDetailModal.vue'
+import AccessibilityControls from './components/AccessibilityControls.vue'
 import { ref } from 'vue'
 import { useLanguage } from './composables/useLanguage'
 import { usePhotoModal } from './composables/usePhotoModal'

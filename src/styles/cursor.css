@@ -2,7 +2,7 @@
 
 /* 全域游標設定 */
 * {
-  cursor: url('/images/cursor/pencil.png') 0 32, auto !important;
+  cursor: url('/images/cursor/pencil-32.png') 0 28, auto !important;
 }
 
 /* 可點擊元素的游標 */
@@ -16,49 +16,39 @@ input[type="button"],
 .social-link,
 .nav-link,
 .language-toggle {
-  cursor: url('/images/cursor/pencil.png') 0 32, pointer !important;
+  cursor: url('/images/cursor/pencil-32.png') 0 28, pointer !important;
 }
 
 /* 輸入框游標 */
 input[type="text"],
 input[type="email"],
 textarea {
-  cursor: url('/images/cursor/pencil.png') 0 32, text !important;
+  cursor: url('/images/cursor/pencil-32.png') 0 28, text !important;
 }
 
 /* 可點擊圖片 */
 .profile-photo,
 .project-image img {
-  cursor: url('/images/cursor/pencil.png') 0 32, pointer !important;
+  cursor: url('/images/cursor/pencil-32.png') 0 28, pointer !important;
 }
 
 /* 選單圖示 */
 .menu-icon {
-  cursor: url('/images/cursor/pencil.png') 0 32, pointer !important;
+  cursor: url('/images/cursor/pencil-32.png') 0 28, pointer !important;
 }
 
 /* 禁用狀態 */
 :disabled,
 [disabled] {
-  cursor: url('/images/cursor/pencil.png') 0 32, not-allowed !important;
+  cursor: url('/images/cursor/pencil-32.png') 0 28, not-allowed !important;
 }
 
 /* 調整大小時的游標 */
 img {
-  cursor: url('/images/cursor/pencil.png') 0 32, auto !important;
-}
-
-/* 懸停效果增強 - 添加微光效果 */
-@keyframes cursor-glow {
-  0%, 100% {
-    filter: drop-shadow(0 0 2px rgba(26, 95, 63, 0.3));
-  }
-  50% {
-    filter: drop-shadow(0 0 8px rgba(26, 95, 63, 0.6));
-  }
+  cursor: url('/images/cursor/pencil-32.png') 0 28, auto !important;
 }
 
 /* 確保游標在所有元素上都可見 */
 body {
-  cursor: url('/images/cursor/pencil.png') 0 32, auto !important;
+  cursor: url('/images/cursor/pencil-32.png') 0 28, auto !important;
 }

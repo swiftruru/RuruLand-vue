@@ -106,7 +106,7 @@ export function useCursorEffect() {
   // 滑鼠移動處理
   function handleMouseMove(e: MouseEvent) {
     mouseX = e.clientX
-    mouseY = e.clientY + window.scrollY
+    mouseY = e.clientY // 不需要加 scrollY，因為 canvas 是 fixed
 
     // 每次移動創建 2-3 個粒子
     const particleCount = Math.floor(Math.random() * 2) + 2
@@ -140,15 +140,10 @@ export function useCursorEffect() {
     const resizeCanvas = () => {
       if (!canvas) return
       canvas.width = window.innerWidth
-      canvas.height = document.documentElement.scrollHeight
+      canvas.height = window.innerHeight
     }
     resizeCanvas()
     window.addEventListener('resize', resizeCanvas)
-    window.addEventListener('scroll', () => {
-      if (canvas) {
-        canvas.height = document.documentElement.scrollHeight
-      }
-    })
 
     ctx = canvas.getContext('2d')
 

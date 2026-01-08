@@ -19,6 +19,9 @@
       <!-- 關於我區塊 -->
       <AboutSection />
 
+      <!-- 職涯歷程區塊 -->
+      <TimelineSection />
+
       <!-- 專案展示區塊 -->
       <ProjectsSection
         @open-photo-modal="openPhotoModal"
@@ -64,6 +67,7 @@
 import NavigationBar from './components/NavigationBar.vue'
 import HeroSection from './components/HeroSection.vue'
 import AboutSection from './components/AboutSection.vue'
+import TimelineSection from './components/TimelineSection.vue'
 import ProjectsSection from './components/ProjectsSection.vue'
 import ContactSection from './components/ContactSection.vue'
 import PhotoModal from './components/PhotoModal.vue'

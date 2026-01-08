@@ -1,0 +1,67 @@
+{
+  "title": "職涯歷程",
+  "workExperience": {
+    "title": "工作經驗",
+    "job1": {
+      "title": "軟體工程師",
+      "company": "台灣萬事達金流股份有限公司",
+      "period": "2020/12 - 2023/03  |  2 年 4 個月",
+      "description": [
+        "主導 .NET Core / .NET Framework MVC 開發三項核心產品，負責金流系統與 App 支付系統之開發維護，確保 7×24 高可用性服務",
+        "執行舊系統現代化重構專案，將 Legacy 系統遷移至 .NET Core 架構，提升系統效能與可維護性",
+        "優化資料庫查詢效能，有效降低 API 回應時間，提升使用者體驗",
+        "撰寫 API 技術文件，建立開發規範與標準化流程，提升團隊協作效率",
+        "建置與管理 IIS 網站部署環境，並具備 GCP 雲端平台實務操作經驗",
+        "協助公司通過 PCI DSS 4.0 國際支付卡安全認證，主導專案安全性調整與合規性改善"
+      ]
+    },
+    "job2": {
+      "title": "數位學伴計畫 帶班老師",
+      "company": "教育部",
+      "period": "2015/03 - 2015/07",
+      "description": [
+        "統籌管理大學伴團隊，負責遠距教學課程之軟硬體設備與上課品質監控",
+        "協調大學伴與小學伴之配對與溝通，籌劃師生交流活動，提升偏鄉學童學習成效"
+      ]
+    },
+    "job3": {
+      "title": "資管系教學助理",
+      "company": "中華大學資訊管理學系",
+      "period": "2011/09 - 2015/07",
+      "description": [
+        "負責程式設計、資料結構課後輔導課程，獲優良 TA 殊榮",
+        "協助學生解決程式問題，培養教學與溝通能力"
+      ]
+    }
+  },
+  "education": {
+    "title": "教育背景",
+    "master": {
+      "degree": "資訊管理系 碩士班",
+      "school": "國立台北護理健康大學",
+      "period": "2025/09 - 2027/09",
+      "status": "在學中",
+      "description": [
+        "運用 Python 與 scikit-learn 實作機器學習專案，包含非監督式學習（K-means、GMM 分群分析，搭配 PCA 降維與 Elbow Method 決定最佳群數）、監督式學習（決策樹、邏輯斯回歸建立預測模型，並以 Accuracy、Precision、Recall、F1-Score、ROC-AUC 進行模型評估）、整合應用（先分群、再預測策略，針對不同族群分別建立預測模型）",
+        "運用 PM4Py 進行流程探勘（Process Mining），完成狗狗長照系統之 BPMN 流程建模、Event Log 模擬產生、Process Discovery 與 Conformance Checking 分析"
+      ]
+    },
+    "buildSchool": {
+      "title": "Build School 軟體工程師培訓",
+      "period": "2020/05 - 2020/11",
+      "description": [
+        "每週 60 小時高強度培訓，紮實學習 C#、物件導向、ASP.NET MVC 企業級開發",
+        "完整學習前端技術 HTML / CSS / JavaScript / Vue.js 及 Azure DevOps 部署流程"
+      ]
+    }
+  },
+  "certifications": {
+    "title": "專業證照",
+    "list": [
+      "SAP ERP 企業資源規劃師",
+      "SAP ERP 財務模組認證",
+      "SAP ERP 配銷模組認證",
+      "SAP ERP 生管製造模組認證"
+    ]
+  }
+}

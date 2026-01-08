@@ -85,10 +85,12 @@
     opacity: 1 !important;
   }
 
-  /* 確保 Projects 和 Contact Section 顯示 */
+  /* 確保 Projects, Timeline 和 Contact Section 顯示 */
   #projects,
+  #timeline,
   #contact,
   .projects,
+  .timeline,
   .contact {
     display: block !important;
     visibility: visible !important;
@@ -521,6 +523,10 @@
     margin-bottom: 1rem !important;
   }
 
+  #timeline {
+    margin-bottom: 1rem !important;
+  }
+
   #projects {
     margin-bottom: 1rem !important;
   }
@@ -530,11 +536,157 @@
   }
 
   /* ========================================
+     Timeline Section (時間軸)
+     ======================================== */
+  .timeline-content {
+    max-width: 100%;
+  }
+
+  .timeline-category {
+    margin-bottom: 1.2rem;
+    page-break-inside: avoid;
+  }
+
+  .timeline-category:last-child {
+    margin-bottom: 0;
+  }
+
+  .timeline-category-title {
+    font-size: 12pt;
+    font-weight: 700;
+    color: #1a5f3f;
+    margin-bottom: 0.8rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 2pt solid #1a5f3f;
+  }
+
+  .timeline-category-title::after {
+    display: none;
+  }
+
+  .timeline-items {
+    padding-left: 0;
+  }
+
+  .timeline-items::before {
+    display: none !important;
+  }
+
+  .timeline-item {
+    margin-bottom: 0.8rem;
+    padding-left: 0;
+    page-break-inside: avoid;
+  }
+
+  .timeline-item:last-child {
+    margin-bottom: 0;
+  }
+
+  .timeline-marker {
+    display: none !important;
+  }
+
+  .timeline-card {
+    padding: 0.8rem !important;
+    border: 1.5pt solid #c8e6c9 !important;
+    border-left: 3pt solid #1a5f3f !important;
+    border-radius: 2pt;
+    background: #ffffff !important;
+    box-shadow: none !important;
+    margin-bottom: 0;
+  }
+
+  .timeline-header {
+    gap: 0.3rem;
+  }
+
+  .timeline-job-title {
+    font-size: 10pt;
+    font-weight: 700;
+    color: #1a5f3f;
+    margin: 0 0 0.2rem 0;
+  }
+
+  .timeline-company {
+    font-size: 9pt;
+    font-weight: 600;
+    color: #2c3e50;
+  }
+
+  .timeline-period {
+    font-size: 8.5pt;
+    color: #666;
+    font-weight: 500;
+  }
+
+  .timeline-status-badge {
+    padding: 0.15rem 0.5rem;
+    background: #1a5f3f !important;
+    color: #ffffff !important;
+    border-radius: 8pt;
+    font-size: 7.5pt;
+    font-weight: 600;
+  }
+
+  .timeline-description {
+    margin: 0.5rem 0 0 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .timeline-description li {
+    padding: 0.3rem 0 0.3rem 1.2rem;
+    font-size: 8.5pt;
+    line-height: 1.5;
+    color: #2c3e50;
+  }
+
+  .timeline-description li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: #2d7a52;
+    font-weight: bold;
+  }
+
+  /* 專業證照網格 */
+  .certifications-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.5rem !important;
+    margin-top: 0.8rem;
+  }
+
+  .certification-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0.8rem !important;
+    background: #f1f8f4 !important;
+    border: 1.5pt solid #1a5f3f !important;
+    border-radius: 12pt;
+    page-break-inside: avoid;
+  }
+
+  .certification-icon {
+    font-size: 10pt;
+  }
+
+  .certification-name {
+    font-size: 8.5pt;
+    font-weight: 600;
+    color: #1a5f3f;
+  }
+
+  /* ========================================
      確保內容不被截斷
      ======================================== */
   .skill-category,
+  .timeline-item,
+  .timeline-card,
   .project-card,
-  .contact-card {
+  .contact-card,
+  .certification-item {
     break-inside: avoid;
     page-break-inside: avoid;
   }

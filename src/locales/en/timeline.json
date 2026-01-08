@@ -1,0 +1,67 @@
+{
+  "title": "Career Timeline",
+  "workExperience": {
+    "title": "Work Experience",
+    "job1": {
+      "title": "Software Engineer",
+      "company": "Taiwan Mastercard Payment Co., Ltd.",
+      "period": "2020/12 - 2023/03  |  2 years 4 months",
+      "description": [
+        "Led development of three core products using .NET Core / .NET Framework MVC, maintaining payment and app payment systems with 7×24 high availability",
+        "Executed legacy system modernization project, migrating systems to .NET Core architecture, improving performance and maintainability",
+        "Optimized database query performance, effectively reducing API response time and enhancing user experience",
+        "Authored API technical documentation, established development standards and standardized processes to improve team collaboration",
+        "Built and managed IIS website deployment environments with hands-on GCP cloud platform experience",
+        "Contributed to achieving PCI DSS 4.0 international payment card security certification, led project security adjustments and compliance improvements"
+      ]
+    },
+    "job2": {
+      "title": "Digital Learning Companion Program Coordinator",
+      "company": "Ministry of Education",
+      "period": "2015/03 - 2015/07",
+      "description": [
+        "Coordinated university mentor teams, managed hardware/software equipment and quality control for distance learning courses",
+        "Facilitated pairing and communication between university and elementary school mentors, organized exchange activities to enhance learning outcomes for rural students"
+      ]
+    },
+    "job3": {
+      "title": "Teaching Assistant, Department of Information Management",
+      "company": "Chung Hua University",
+      "period": "2011/09 - 2015/07",
+      "description": [
+        "Conducted programming and data structure tutoring sessions, awarded Outstanding TA",
+        "Assisted students with programming challenges, developed teaching and communication skills"
+      ]
+    }
+  },
+  "education": {
+    "title": "Education",
+    "master": {
+      "degree": "M.S. in Information Management",
+      "school": "National Taipei University of Nursing and Health Sciences",
+      "period": "2025/09 - 2027/09",
+      "status": "In Progress",
+      "description": [
+        "Implemented machine learning projects using Python and scikit-learn, including unsupervised learning (K-means, GMM clustering with PCA dimensionality reduction and Elbow Method for optimal cluster selection), supervised learning (decision trees, logistic regression with Accuracy, Precision, Recall, F1-Score, ROC-AUC evaluation metrics), and integrated approach (cluster-first-predict-later strategy for targeted modeling)",
+        "Applied PM4Py for process mining, including BPMN process modeling for dog long-term care system, event log simulation, process discovery, and conformance checking analysis"
+      ]
+    },
+    "buildSchool": {
+      "title": "Build School Software Engineer Training",
+      "period": "2020/05 - 2020/11",
+      "description": [
+        "60 hours per week intensive training, comprehensive learning of C#, Object-Oriented Programming, ASP.NET MVC enterprise development",
+        "Completed frontend technology stack including HTML / CSS / JavaScript / Vue.js and Azure DevOps deployment workflow"
+      ]
+    }
+  },
+  "certifications": {
+    "title": "Professional Certifications",
+    "list": [
+      "SAP ERP Enterprise Resource Planner",
+      "SAP ERP Financial Module Certification",
+      "SAP ERP Sales and Distribution Module Certification",
+      "SAP ERP Production Planning & Manufacturing Module Certification"
+    ]
+  }
+}

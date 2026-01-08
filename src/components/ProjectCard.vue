@@ -58,7 +58,7 @@
         <button class="project-detail-btn" @click="$emit('openDetailModal', project)">
           {{ t('projects.viewDetails') }}
         </button>
-        <a :href="project.url" target="_blank" rel="noopener noreferrer" class="project-link">
+        <a :href="getFullUrl(project.url)" target="_blank" rel="noopener noreferrer" class="project-link">
           {{ t('projects.viewWebsite') }} →
         </a>
       </div>
@@ -90,4 +90,15 @@ defineEmits<{
   openPhotoModal: [imageSrc: string]
   openDetailModal: [project: Project]
 }>()
+
+// 確保 URL 包含協議
+function getFullUrl(url: string): string {
+  if (!url) return ''
+  // 如果已經包含協議，直接返回
+  if (url.startsWith('http://') || url.startsWith('https://')) {
+    return url
+  }
+  // 否則添加 https://
+  return `https://${url}`
+}
 </script>

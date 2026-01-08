@@ -16,7 +16,7 @@
             <h2 class="detail-title">{{ project.title }}</h2>
             <a
               v-if="project.url"
-              :href="project.url"
+              :href="getFullUrl(project.url)"
               target="_blank"
               rel="noopener noreferrer"
               class="detail-link"
@@ -156,6 +156,17 @@ function handleBackdropClick(event: MouseEvent) {
   if (event.target === event.currentTarget) {
     close()
   }
+}
+
+// 確保 URL 包含協議
+function getFullUrl(url: string): string {
+  if (!url) return ''
+  // 如果已經包含協議，直接返回
+  if (url.startsWith('http://') || url.startsWith('https://')) {
+    return url
+  }
+  // 否則添加 https://
+  return `https://${url}`
 }
 
 // 追蹤專案查看

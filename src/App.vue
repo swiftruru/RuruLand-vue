@@ -1,5 +1,8 @@
 <template>
   <div id="app">
+    <!-- 頁面載入動畫 -->
+    <PageLoader />
+
     <!-- 導航列 -->
     <NavigationBar />
 
@@ -42,6 +45,7 @@ import AboutSection from './components/AboutSection.vue'
 import ProjectsSection from './components/ProjectsSection.vue'
 import ContactSection from './components/ContactSection.vue'
 import PhotoModal from './components/PhotoModal.vue'
+import PageLoader from './components/PageLoader.vue'
 import { useLanguage } from './composables/useLanguage'
 import { usePhotoModal } from './composables/usePhotoModal'
 import { useScrollAnimation } from './composables/useScrollAnimation'

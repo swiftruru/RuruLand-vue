@@ -145,16 +145,23 @@
 
 .contact-item h3 {
     color: var(--primary-color);
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     font-size: 1.2rem;
     font-weight: 600;
+    padding-bottom: 0.5rem;
+    position: relative;
+    display: block;
 }
 
-.contact-item h3::before {
-    content: '▪';
-    color: var(--primary-color);
-    margin-right: 0.5rem;
-    font-size: 1.2em;
+.contact-item h3::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-color) 0%, var(--accent-color) 100%);
+    border-radius: 2px;
 }
 
 .contact-link {

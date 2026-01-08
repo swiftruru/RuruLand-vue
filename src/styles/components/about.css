@@ -166,13 +166,20 @@
     margin-bottom: 1.5rem;
     font-size: 1.3rem;
     font-weight: 600;
+    padding-bottom: 0.5rem;
+    position: relative;
+    display: block;
 }
 
-.skill-category h3::before {
-    content: '▪';
-    color: var(--primary-color);
-    margin-right: 0.5rem;
-    font-size: 1.2em;
+.skill-category h3::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-color) 0%, var(--accent-color) 100%);
+    border-radius: 2px;
 }
 
 .tech-stack {

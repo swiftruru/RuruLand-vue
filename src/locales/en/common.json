@@ -25,5 +25,18 @@
     "title": "Share This Page",
     "copy": "Copy Link",
     "copied": "Copied!"
+  },
+  "accessibility": {
+    "skipToMain": "Skip to main content",
+    "enableHighContrast": "Enable high contrast mode",
+    "disableHighContrast": "Disable high contrast mode",
+    "highContrastEnabled": "High contrast mode enabled",
+    "highContrastDisabled": "High contrast mode disabled",
+    "keyboardHint": "Use Tab to navigate, Enter to select",
+    "closeModal": "Close dialog",
+    "openPhotoModal": "Click to enlarge image",
+    "openDetailModal": "View project details",
+    "navigationMenu": "Navigation menu",
+    "languageSwitcher": "Language switcher"
   }
 }

@@ -45,6 +45,7 @@ import PhotoModal from './components/PhotoModal.vue'
 import { useLanguage } from './composables/useLanguage'
 import { usePhotoModal } from './composables/usePhotoModal'
 import { useScrollAnimation } from './composables/useScrollAnimation'
+import { useCursorEffect } from './composables/useCursorEffect'
 
 // 語言切換
 const { t } = useLanguage()
@@ -58,4 +59,7 @@ function openPhotoModal(imageSrc: string) {
 
 // 滾動動畫
 useScrollAnimation()
+
+// 自訂游標與粒子效果
+useCursorEffect()
 </script>

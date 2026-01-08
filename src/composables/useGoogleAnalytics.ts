@@ -1,12 +1,9 @@
 /**
  * Google Analytics 4 整合
- * 提供頁面追蹤和事件追蹤功能
+ * 提供事件追蹤功能
+ *
+ * 注意：gtag.js 已在 index.html 中載入，這裡只提供事件追蹤工具函數
  */
-
-import { onMounted } from 'vue'
-
-// GA4 Measurement ID from environment variable
-const GA_MEASUREMENT_ID = import.meta.env.VITE_GA_MEASUREMENT_ID
 
 // 擴展 Window 介面以支援 gtag
 declare global {
@@ -18,35 +15,13 @@ declare global {
 
 /**
  * 初始化 Google Analytics
+ * gtag 已在 index.html 中初始化，此函數僅用於保持一致性
  */
 export function useGoogleAnalytics() {
-  onMounted(() => {
-    // 只在生產環境且有設定 Measurement ID 時載入 GA
-    if (!GA_MEASUREMENT_ID || import.meta.env.DEV) {
-      console.log('[GA] Google Analytics disabled in development mode')
-      return
-    }
-
-    // 載入 gtag.js script
-    const script = document.createElement('script')
-    script.async = true
-    script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`
-    document.head.appendChild(script)
-
-    // 初始化 dataLayer
-    window.dataLayer = window.dataLayer || []
-    window.gtag = function gtag() {
-      window.dataLayer.push(arguments)
-    }
-
-    // 設定 GA
-    window.gtag('js', new Date())
-    window.gtag('config', GA_MEASUREMENT_ID, {
-      send_page_view: true,
-    })
-
-    console.log('[GA] Google Analytics initialized:', GA_MEASUREMENT_ID)
-  })
+  // gtag.js 已在 index.html 中載入，無需額外初始化
+  if (import.meta.env.DEV) {
+    console.log('[GA] Development mode - event tracking will be logged to console')
+  }
 }
 
 /**
@@ -55,14 +30,13 @@ export function useGoogleAnalytics() {
  * @param eventParams - 事件參數
  */
 export function trackEvent(eventName: string, eventParams?: Record<string, any>) {
-  if (!GA_MEASUREMENT_ID || import.meta.env.DEV) {
+  if (import.meta.env.DEV) {
     console.log('[GA] Event (dev mode):', eventName, eventParams)
     return
   }
 
-  if (typeof window.gtag === 'function') {
+  if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
     window.gtag('event', eventName, eventParams)
-    console.log('[GA] Event tracked:', eventName, eventParams)
   }
 }
 
@@ -72,17 +46,16 @@ export function trackEvent(eventName: string, eventParams?: Record<string, any>)
  * @param pagePath - 頁面路徑
  */
 export function trackPageView(pageTitle?: string, pagePath?: string) {
-  if (!GA_MEASUREMENT_ID || import.meta.env.DEV) {
+  if (import.meta.env.DEV) {
     console.log('[GA] Page view (dev mode):', pageTitle, pagePath)
     return
   }
 
-  if (typeof window.gtag === 'function') {
+  if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
     window.gtag('event', 'page_view', {
       page_title: pageTitle || document.title,
       page_path: pagePath || window.location.pathname,
     })
-    console.log('[GA] Page view tracked:', pageTitle, pagePath)
   }
 }
 

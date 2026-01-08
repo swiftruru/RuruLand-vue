@@ -136,6 +136,11 @@ export function useAccessibility() {
     const firstElement = focusableElements[0]
     const lastElement = focusableElements[focusableElements.length - 1]
 
+    // 如果沒有可聚焦元素，直接返回空的清理函數
+    if (!firstElement || !lastElement) {
+      return () => {}
+    }
+
     const handleTabKey = (e: KeyboardEvent) => {
       if (e.key !== 'Tab') return
 
@@ -157,7 +162,7 @@ export function useAccessibility() {
     element.addEventListener('keydown', handleTabKey)
 
     // 將焦點移到第一個元素
-    firstElement?.focus()
+    firstElement.focus()
 
     // 返回清理函數
     return () => {

@@ -214,13 +214,6 @@
     z-index: 1;
 }
 
-.project-header h3::before {
-    content: '▪';
-    color: white;
-    margin-right: 0.5rem;
-    font-size: 1.2em;
-}
-
 .project-url {
     color: rgba(255, 255, 255, 0.95);
     text-decoration: none;

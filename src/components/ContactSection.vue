@@ -89,6 +89,18 @@
             💻
           </a>
         </div>
+
+        <!-- 履歷列印區 -->
+        <div class="resume-actions fade-in">
+          <button
+            class="btn btn-primary resume-btn print-resume-btn"
+            @click="handlePrint"
+            :aria-label="t('about.resume.print')"
+          >
+            <span class="btn-icon">🖨️</span>
+            <span class="btn-text">{{ t('about.resume.print') }}</span>
+          </button>
+        </div>
       </div>
     </div>
   </section>
@@ -96,7 +108,14 @@
 
 <script setup lang="ts">
 import { useLanguage } from '../composables/useLanguage'
-import { trackContact } from '../composables/useGoogleAnalytics'
+import { trackContact, trackEvent } from '../composables/useGoogleAnalytics'
 
 const { t } = useLanguage()
+
+function handlePrint() {
+  trackEvent('resume_print', {
+    source: 'contact_section'
+  })
+  window.print()
+}
 </script>

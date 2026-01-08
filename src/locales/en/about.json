@@ -12,5 +12,10 @@
     "exp2": "Contributed to achieving PCI DSS 4.0 certification",
     "exp3": "2+ years of payment system development experience",
     "exp4": "M.S. in Information Management (in progress)"
+  },
+  "resume": {
+    "download": "Download Resume",
+    "downloadPdf": "Download PDF Resume",
+    "print": "Print Resume"
   }
 }

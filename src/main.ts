@@ -1,4 +1,4 @@
-// CSS 引入順序：變數 → 基礎 → 組件 → 效果 → 無障礙
+// CSS 引入順序：變數 → 基礎 → 組件 → 效果 → 無障礙 → 列印
 import './styles/variables.css'
 import './styles/base.css'
 import './styles/components/navigation.css'
@@ -10,6 +10,7 @@ import './styles/components/modal.css'
 import './styles/cursor.css'
 import './styles/accessibility.css'
 import './styles/lazy-load.css'
+import './styles/print.css'
 
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'

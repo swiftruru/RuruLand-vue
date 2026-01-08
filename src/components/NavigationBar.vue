@@ -26,6 +26,7 @@
       <ul class="nav-links" :class="{ active: isMenuOpen }">
         <li><a href="#home" @click="closeMenu">{{ t('common.nav.home') }}</a></li>
         <li><a href="#about" @click="closeMenu">{{ t('common.nav.about') }}</a></li>
+        <li><a href="#timeline" @click="closeMenu">{{ t('common.nav.timeline') }}</a></li>
         <li><a href="#projects" @click="closeMenu">{{ t('common.nav.projects') }}</a></li>
         <li><a href="#contact" @click="closeMenu">{{ t('common.nav.contact') }}</a></li>
       </ul>

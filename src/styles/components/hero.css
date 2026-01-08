@@ -20,7 +20,8 @@
         0 16px 32px rgba(0, 0, 0, 0.04);
     border: 1px solid rgba(26, 95, 63, 0.08);
     position: relative;
-    max-width: 900px;
+    width: 900px;
+    max-width: 90%;
 }
 
 /* 紙張邊緣效果 */
@@ -137,6 +138,10 @@
 
 /* Mobile Responsive */
 @media (max-width: 768px) {
+    .hero .container {
+        padding: 3rem 2rem;
+    }
+
     .profile-photo {
         width: 140px;
         height: 140px;

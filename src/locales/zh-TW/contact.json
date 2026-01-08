@@ -5,12 +5,24 @@
     "title": "Email",
     "address": "ruru{'@'}swift.moe"
   },
+  "phone": {
+    "title": "電話",
+    "number": "0977-006-588"
+  },
   "github": {
     "title": "GitHub",
     "username": "github.com/swiftruru"
   },
+  "cakeresume": {
+    "title": "CakeResume",
+    "text": "查看完整履歷"
+  },
+  "website": {
+    "title": "個人網站",
+    "url": "swift.moe"
+  },
   "location": {
     "title": "所在地",
-    "city": "台灣 台北"
+    "city": "台北市士林區"
   }
 }

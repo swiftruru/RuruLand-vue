@@ -18,17 +18,12 @@
             </a>
           </div>
 
-          <!-- Website -->
+          <!-- Phone -->
           <div class="contact-item">
-            <span class="contact-icon">🌐</span>
-            <h3>Website</h3>
-            <a
-              href="https://swift.moe"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="contact-link"
-            >
-              swift.moe
+            <span class="contact-icon">📱</span>
+            <h3>{{ t('contact.phone.title') }}</h3>
+            <a href="tel:+886977006588" class="contact-link" @click="trackContact('phone')">
+              {{ t('contact.phone.number') }}
             </a>
           </div>
 
@@ -47,47 +42,42 @@
             </a>
           </div>
 
+          <!-- CakeResume -->
+          <div class="contact-item">
+            <span class="contact-icon">📄</span>
+            <h3>{{ t('contact.cakeresume.title') }}</h3>
+            <a
+              href="https://www.cake.me/s--n_h9IMsdC_tvtnXCUcLp7Q--/sandyru2025"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="contact-link"
+              @click="trackContact('cakeresume')"
+            >
+              {{ t('contact.cakeresume.text') }}
+            </a>
+          </div>
+
+          <!-- Website -->
+          <div class="contact-item">
+            <span class="contact-icon">🌐</span>
+            <h3>{{ t('contact.website.title') }}</h3>
+            <a
+              href="https://swift.moe"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="contact-link"
+              @click="trackContact('website')"
+            >
+              {{ t('contact.website.url') }}
+            </a>
+          </div>
+
           <!-- Location -->
           <div class="contact-item">
             <span class="contact-icon">📍</span>
             <h3>{{ t('contact.location.title') }}</h3>
             <p class="contact-text">{{ t('contact.location.city') }}</p>
           </div>
-        </div>
-
-        <!-- Social Links -->
-        <div class="social-links">
-          <a
-            href="mailto:ruru@swift.moe"
-            class="social-link"
-            aria-label="Email"
-            title="Email"
-            @click="trackContact('email')"
-          >
-            📧
-          </a>
-          <a
-            href="https://swift.moe"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="social-link"
-            aria-label="Website"
-            title="Website"
-            @click="trackContact('website')"
-          >
-            🌐
-          </a>
-          <a
-            href="https://github.com/swiftruru"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="social-link"
-            aria-label="GitHub"
-            title="GitHub"
-            @click="trackContact('github')"
-          >
-            💻
-          </a>
         </div>
 
         <!-- 履歷列印區 -->

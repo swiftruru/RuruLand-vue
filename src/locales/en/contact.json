@@ -5,12 +5,24 @@
     "title": "Email",
     "address": "ruru{'@'}swift.moe"
   },
+  "phone": {
+    "title": "Phone",
+    "number": "0977-006-588"
+  },
   "github": {
     "title": "GitHub",
     "username": "github.com/swiftruru"
   },
+  "cakeresume": {
+    "title": "CakeResume",
+    "text": "View Full Resume"
+  },
+  "website": {
+    "title": "Website",
+    "url": "swift.moe"
+  },
   "location": {
     "title": "Location",
-    "city": "Taipei, Taiwan"
+    "city": "Shilin District, Taipei City"
   }
 }

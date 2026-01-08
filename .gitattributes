@@ -1,0 +1,13 @@
+# Vue.js project language detection
+*.vue linguist-language=Vue
+
+# Ignore generated files from language statistics
+dist/* linguist-generated=true
+public/* linguist-vendored=true
+
+# TypeScript and JavaScript
+*.ts linguist-language=TypeScript
+*.js linguist-language=JavaScript
+
+# Exclude specific directories from language statistics
+node_modules/* linguist-vendored=true

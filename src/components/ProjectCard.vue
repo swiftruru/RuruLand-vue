@@ -54,9 +54,14 @@
       </div>
 
       <!-- 專案連結 -->
-      <a :href="project.url" target="_blank" rel="noopener noreferrer" class="project-link">
-        {{ t('projects.viewWebsite') }} →
-      </a>
+      <div class="project-actions">
+        <button class="project-detail-btn" @click="$emit('openDetailModal', project)">
+          {{ t('projects.viewDetails') }}
+        </button>
+        <a :href="project.url" target="_blank" rel="noopener noreferrer" class="project-link">
+          {{ t('projects.viewWebsite') }} →
+        </a>
+      </div>
     </div>
   </div>
 </template>
@@ -83,5 +88,6 @@ defineProps<{
 
 defineEmits<{
   openPhotoModal: [imageSrc: string]
+  openDetailModal: [project: Project]
 }>()
 </script>

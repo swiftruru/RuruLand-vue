@@ -1,8 +1,15 @@
 {
   "title": "我的作品集",
   "viewWebsite": "查看網站",
+  "viewDetails": "查看詳情",
   "techStack": "技術棧",
   "highlights": "技術亮點",
+  "about": "專案簡介",
+  "clickToEnlarge": "點擊圖片放大查看",
+  "challengesAndSolutions": "技術挑戰與解決方案",
+  "challenge": "挑戰",
+  "problem": "問題",
+  "solution": "解決方案",
   "perfume": {
     "title": "FLORIS 香水電商平台",
     "url": "perfume.azurewebsites.net",

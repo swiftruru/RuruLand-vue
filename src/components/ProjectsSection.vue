@@ -8,12 +8,14 @@
         <ProjectCard
           :project="perfumeProject"
           @open-photo-modal="$emit('openPhotoModal', $event)"
+          @open-detail-modal="$emit('openDetailModal', $event)"
         />
 
         <!-- RuDjango 部落格網站 -->
         <ProjectCard
           :project="djangoProject"
           @open-photo-modal="$emit('openPhotoModal', $event)"
+          @open-detail-modal="$emit('openDetailModal', $event)"
         />
       </div>
     </div>
@@ -27,8 +29,20 @@ import ProjectCard from './ProjectCard.vue'
 
 const { t } = useLanguage()
 
+interface Project {
+  title: string
+  url: string
+  image: string
+  description: string
+  sectionTitle: string
+  items: string[]
+  techStack: string[]
+  highlights?: string[]
+}
+
 defineEmits<{
   openPhotoModal: [imageSrc: string]
+  openDetailModal: [project: Project]
 }>()
 
 const baseUrl = import.meta.env.BASE_URL

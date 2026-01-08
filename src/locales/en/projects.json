@@ -1,8 +1,15 @@
 {
   "title": "My Projects",
   "viewWebsite": "View Website",
+  "viewDetails": "View Details",
   "techStack": "Tech Stack",
   "highlights": "Highlights",
+  "about": "About",
+  "clickToEnlarge": "Click to enlarge image",
+  "challengesAndSolutions": "Technical Challenges & Solutions",
+  "challenge": "Challenge",
+  "problem": "Problem",
+  "solution": "Solution",
   "perfume": {
     "title": "FLORIS Perfume E-commerce Platform",
     "url": "perfume.azurewebsites.net",

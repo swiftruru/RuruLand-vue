@@ -253,7 +253,7 @@ describe('FloatingContactButton', () => {
   })
 
   it('should call trackContact with correct method when contact item is clicked', async () => {
-    const consoleLogSpy = vi.spyOn(console, 'log')
+    const consoleLogSpy = vi.spyOn(console, 'log').mockImplementation(() => {})
 
     const mainButton = wrapper.find('.contact-main-btn')
     await mainButton.trigger('click')
@@ -270,6 +270,7 @@ describe('FloatingContactButton', () => {
   })
 
   it('should call gtag when window.gtag exists', async () => {
+    const consoleLogSpy = vi.spyOn(console, 'log').mockImplementation(() => {})
     const mockGtag = vi.fn()
     ;(window as any).gtag = mockGtag
 
@@ -284,9 +285,11 @@ describe('FloatingContactButton', () => {
     })
 
     delete (window as any).gtag
+    consoleLogSpy.mockRestore()
   })
 
   it('should not throw error when window.gtag does not exist', async () => {
+    const consoleLogSpy = vi.spyOn(console, 'log').mockImplementation(() => {})
     delete (window as any).gtag
 
     const mainButton = wrapper.find('.contact-main-btn')
@@ -297,5 +300,7 @@ describe('FloatingContactButton', () => {
     expect(async () => {
       await contactItems[0].trigger('click')
     }).not.toThrow()
+
+    consoleLogSpy.mockRestore()
   })
 })

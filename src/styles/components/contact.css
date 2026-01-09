@@ -189,6 +189,19 @@
     line-height: 1.6;
 }
 
+/* 聯絡表單介紹 */
+.contact-form-intro {
+    text-align: center;
+    margin: 3rem 0 1rem;
+}
+
+.contact-form-intro p {
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    font-weight: 500;
+}
+
 /* Social Links Section */
 .social-links {
     display: flex;

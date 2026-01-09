@@ -1,6 +1,7 @@
 {
   "title": "Contact Me",
   "intro": "If you're interested in my work or would like to collaborate, feel free to reach out anytime!",
+  "formIntro": "You can also fill out the contact form below, and I'll respond within 24 hours.",
   "email": {
     "title": "Email",
     "address": "ruru{'@'}swift.moe"
@@ -24,5 +25,19 @@
   "location": {
     "title": "Location",
     "city": "Shilin District, Taipei City"
+  },
+  "form": {
+    "name": "Name",
+    "namePlaceholder": "Enter your name",
+    "email": "Email",
+    "emailPlaceholder": "Enter your email",
+    "subject": "Subject",
+    "subjectPlaceholder": "Enter subject",
+    "message": "Message",
+    "messagePlaceholder": "Enter your message...",
+    "submit": "Send Message",
+    "sending": "Sending...",
+    "successMessage": "Message sent successfully! I'll get back to you soon.",
+    "errorMessage": "Failed to send message. Please try again later or contact me directly via email."
   }
 }

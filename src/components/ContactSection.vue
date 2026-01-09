@@ -74,6 +74,14 @@
           </div>
         </div>
 
+        <!-- 聯絡表單介紹 -->
+        <div class="contact-form-intro">
+          <p>{{ t('contact.formIntro') }}</p>
+        </div>
+
+        <!-- 聯絡表單 -->
+        <ContactForm />
+
         <!-- 履歷列印區 -->
         <div class="resume-actions fade-in">
           <button
@@ -92,6 +100,7 @@
 <script setup lang="ts">
 import { useLanguage } from '../composables/useLanguage'
 import { trackContact, trackEvent } from '../composables/useGoogleAnalytics'
+import ContactForm from './ContactForm.vue'
 
 const { t } = useLanguage()
 

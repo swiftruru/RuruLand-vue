@@ -11,7 +11,6 @@
         <div class="contact-grid">
           <!-- Email -->
           <div class="contact-item">
-            <span class="contact-icon">📧</span>
             <h3>{{ t('contact.email.title') }}</h3>
             <a href="mailto:ruru@swift.moe" class="contact-link" @click="trackContact('email')">
               {{ t('contact.email.address') }}
@@ -20,7 +19,6 @@
 
           <!-- Phone -->
           <div class="contact-item">
-            <span class="contact-icon">📱</span>
             <h3>{{ t('contact.phone.title') }}</h3>
             <a href="tel:+886977006588" class="contact-link" @click="trackContact('phone')">
               {{ t('contact.phone.number') }}
@@ -29,7 +27,6 @@
 
           <!-- GitHub -->
           <div class="contact-item">
-            <span class="contact-icon">💻</span>
             <h3>{{ t('contact.github.title') }}</h3>
             <a
               href="https://github.com/swiftruru"
@@ -44,7 +41,6 @@
 
           <!-- CakeResume -->
           <div class="contact-item">
-            <span class="contact-icon">📄</span>
             <h3>{{ t('contact.cakeresume.title') }}</h3>
             <a
               href="https://www.cake.me/s--n_h9IMsdC_tvtnXCUcLp7Q--/sandyru2025"
@@ -59,7 +55,6 @@
 
           <!-- Website -->
           <div class="contact-item">
-            <span class="contact-icon">🌐</span>
             <h3>{{ t('contact.website.title') }}</h3>
             <a
               href="https://swift.moe"
@@ -74,7 +69,6 @@
 
           <!-- Location -->
           <div class="contact-item">
-            <span class="contact-icon">📍</span>
             <h3>{{ t('contact.location.title') }}</h3>
             <p class="contact-text">{{ t('contact.location.city') }}</p>
           </div>
@@ -87,7 +81,6 @@
             @click="handlePrint"
             :aria-label="t('about.resume.print')"
           >
-            <span class="btn-icon">🖨️</span>
             <span class="btn-text">{{ t('about.resume.print') }}</span>
           </button>
         </div>

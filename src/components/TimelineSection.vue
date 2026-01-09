@@ -112,7 +112,6 @@
               :key="index"
               class="certification-item"
             >
-              <span class="certification-icon">🏆</span>
               <span class="certification-name">{{ cert }}</span>
             </div>
           </div>

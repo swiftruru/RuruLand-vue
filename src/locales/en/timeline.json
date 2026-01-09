@@ -4,7 +4,7 @@
     "title": "Work Experience",
     "job1": {
       "title": "Software Engineer",
-      "company": "Taiwan Mastercard Payment Co., Ltd.",
+      "company": "TM Cash Flow Co., Ltd.",
       "period": "2020/12 - 2023/03  |  2 years 4 months",
       "description": [
         "Led development of three core products using .NET Core / .NET Framework MVC, maintaining payment and app payment systems with 7×24 high availability",

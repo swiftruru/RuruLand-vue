@@ -11,10 +11,14 @@ beforeEach(() => {
   const pinia = createPinia()
   setActivePinia(pinia)
 
-  // 過濾 i18n 警告
+  // 過濾 i18n 和 jsdom 警告
   console.warn = (...args: any[]) => {
     const msg = args[0]?.toString() || ''
-    if (msg.includes('[intlify]') || msg.includes('Not found')) {
+    if (
+      msg.includes('[intlify]') ||
+      msg.includes('Not found') ||
+      msg.includes('Not implemented: navigation')
+    ) {
       return
     }
     originalWarn.apply(console, args)
@@ -22,7 +26,10 @@ beforeEach(() => {
 
   console.error = (...args: any[]) => {
     const msg = args[0]?.toString() || ''
-    if (msg.includes('Message compilation error')) {
+    if (
+      msg.includes('Message compilation error') ||
+      msg.includes('Not implemented: navigation')
+    ) {
       return
     }
     originalError.apply(console, args)

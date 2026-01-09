@@ -3,16 +3,23 @@ import { ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 
 export const useLanguageStore = defineStore('language', () => {
+  // 檢查是否在瀏覽器環境
+  const isBrowser = typeof window !== 'undefined'
+
   // State
-  const currentLocale = ref<string>(localStorage.getItem('language') || 'zh-TW')
+  const currentLocale = ref<string>(
+    isBrowser && localStorage.getItem('language') ? localStorage.getItem('language')! : 'zh-TW'
+  )
 
   // Actions
   function switchLanguage(locale: string) {
     currentLocale.value = locale
-    localStorage.setItem('language', locale)
 
-    // 更新 HTML lang 屬性
-    document.documentElement.lang = locale === 'zh-TW' ? 'zh-TW' : 'en'
+    if (isBrowser) {
+      localStorage.setItem('language', locale)
+      // 更新 HTML lang 屬性
+      document.documentElement.lang = locale === 'zh-TW' ? 'zh-TW' : 'en'
+    }
   }
 
   function toggleLanguage() {

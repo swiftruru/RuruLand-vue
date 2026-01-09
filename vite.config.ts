@@ -128,14 +128,6 @@ export default defineConfig({
     },
   },
   build: {
-    rollupOptions: {
-      output: {
-        manualChunks: {
-          'vue-vendor': ['vue', 'vue-router', 'pinia'],
-          'i18n-vendor': ['vue-i18n'],
-        },
-      },
-    },
     minify: 'terser',
     terserOptions: {
       compress: {

@@ -16,39 +16,47 @@ import './styles/accessibility.css'
 import './styles/lazy-load.css'
 import './styles/print.css'
 
-import { createApp } from 'vue'
+import { ViteSSG } from 'vite-ssg'
 import { createPinia } from 'pinia'
+import { createHead } from '@vueuse/head'
 
 import App from './App.vue'
-import router from './router'
-import i18n from './i18n'
+import { i18n } from './i18n'
 
-const app = createApp(App)
-
-app.use(createPinia())
-app.use(router)
-app.use(i18n)
-
-app.mount('#app')
-
-// 註冊 PWA Service Worker
-import { registerSW } from 'virtual:pwa-register'
-
-const updateSW = registerSW({
-  onNeedRefresh() {
-    // 當有新版本可用時，可以選擇顯示提示訊息
-    if (confirm('新版本可用！點擊確定以更新。')) {
-      updateSW(true)
-    }
+// https://github.com/antfu/vite-ssg
+export const createApp = ViteSSG(
+  App,
+  {
+    routes: [
+      { path: '/', component: () => import('./views/HomeView.vue') }
+    ]
   },
-  onOfflineReady() {
-    console.log('App ready to work offline')
+  (ctx) => {
+    // 安裝 plugins
+    ctx.app.use(createPinia())
+    ctx.app.use(createHead())
+    ctx.app.use(i18n)
   },
-  onRegistered(registration: ServiceWorkerRegistration | undefined) {
-    // Service Worker 註冊成功
-    console.log('Service Worker registered:', registration)
-  },
-  onRegisterError(error: Error) {
-    console.error('Service Worker registration failed:', error)
-  },
-})
+)
+
+// 客戶端專用：PWA Service Worker
+if (typeof window !== 'undefined') {
+  import('virtual:pwa-register').then(({ registerSW }) => {
+    const updateSW = registerSW({
+      onNeedRefresh() {
+        if (confirm('新版本可用！點擊確定以更新。')) {
+          updateSW(true)
+        }
+      },
+      onOfflineReady() {
+        console.log('App ready to work offline')
+      },
+      onRegistered(registration: ServiceWorkerRegistration | undefined) {
+        console.log('Service Worker registered:', registration)
+      },
+      onRegisterError(error: Error) {
+        console.error('Service Worker registration failed:', error)
+      },
+    })
+  })
+}

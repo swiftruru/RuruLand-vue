@@ -259,4 +259,355 @@ describe('useAccessibility', () => {
     expect(typeof removeTrap).toBe('function')
     expect(() => removeTrap()).not.toThrow()
   })
+
+  it('should detect system contrast preference when matchMedia available', () => {
+    // Mock window.matchMedia
+    const mockMatchMedia = vi.fn((query: string) => ({
+      matches: query === '(prefers-contrast: high)',
+      media: query,
+      addEventListener: vi.fn(),
+      removeEventListener: vi.fn(),
+      addListener: vi.fn(),
+      removeListener: vi.fn(),
+      dispatchEvent: vi.fn()
+    }))
+
+    Object.defineProperty(window, 'matchMedia', {
+      writable: true,
+      configurable: true,
+      value: mockMatchMedia
+    })
+
+    const TestComponent = defineComponent({
+      setup() {
+        return useAccessibility()
+      },
+      template: '<div></div>'
+    })
+
+    const wrapper = mount(TestComponent)
+    const vm = wrapper.vm as any
+    cleanup = () => wrapper.unmount()
+
+    expect(mockMatchMedia).toHaveBeenCalledWith('(prefers-contrast: high)')
+    expect(vm.isHighContrast).toBe(true)
+    expect(document.body.classList.contains('high-contrast')).toBe(true)
+  })
+
+  it('should not enable contrast if localStorage has preference', () => {
+    localStorage.setItem('highContrast', 'false')
+
+    const mockMatchMedia = vi.fn((query: string) => ({
+      matches: query === '(prefers-contrast: high)',
+      media: query,
+      addEventListener: vi.fn(),
+      removeEventListener: vi.fn(),
+      addListener: vi.fn(),
+      removeListener: vi.fn(),
+      dispatchEvent: vi.fn()
+    }))
+
+    Object.defineProperty(window, 'matchMedia', {
+      writable: true,
+      configurable: true,
+      value: mockMatchMedia
+    })
+
+    const TestComponent = defineComponent({
+      setup() {
+        return useAccessibility()
+      },
+      template: '<div></div>'
+    })
+
+    const wrapper = mount(TestComponent)
+    const vm = wrapper.vm as any
+    cleanup = () => wrapper.unmount()
+
+    // Should respect localStorage preference over system preference
+    expect(vm.isHighContrast).toBe(false)
+  })
+
+  it('should handle system contrast change event', async () => {
+    let changeHandler: ((e: any) => void) | null = null
+
+    const mockMatchMedia = vi.fn((query: string) => ({
+      matches: false,
+      media: query,
+      addEventListener: vi.fn((event: string, handler: any) => {
+        if (event === 'change') {
+          changeHandler = handler
+        }
+      }),
+      removeEventListener: vi.fn(),
+      addListener: vi.fn(),
+      removeListener: vi.fn(),
+      dispatchEvent: vi.fn()
+    }))
+
+    Object.defineProperty(window, 'matchMedia', {
+      writable: true,
+      configurable: true,
+      value: mockMatchMedia
+    })
+
+    const TestComponent = defineComponent({
+      setup() {
+        return useAccessibility()
+      },
+      template: '<div></div>'
+    })
+
+    const wrapper = mount(TestComponent)
+    const vm = wrapper.vm as any
+    cleanup = () => wrapper.unmount()
+
+    expect(vm.isHighContrast).toBe(false)
+
+    // Trigger the change event
+    if (changeHandler) {
+      changeHandler({ matches: true })
+      await wrapper.vm.$nextTick()
+
+      expect(vm.isHighContrast).toBe(true)
+      expect(document.body.classList.contains('high-contrast')).toBe(true)
+    }
+  })
+
+  it('should create announcement element with correct attributes', () => {
+    // Clear any existing announcements first
+    const existingAnnouncements = document.querySelectorAll('[role="status"]')
+    existingAnnouncements.forEach(el => el.remove())
+
+    const TestComponent = defineComponent({
+      setup() {
+        return useAccessibility()
+      },
+      template: '<div></div>'
+    })
+
+    const wrapper = mount(TestComponent)
+    const vm = wrapper.vm as any
+    cleanup = () => {
+      wrapper.unmount()
+      // Clean up announcements
+      const announcements = document.querySelectorAll('[role="status"]')
+      announcements.forEach(el => el.remove())
+    }
+
+    vm.announceToScreenReader('Test message')
+
+    const announcement = document.querySelector('[role="status"]')
+    expect(announcement).toBeTruthy()
+    expect(announcement?.textContent).toBe('Test message')
+    expect(announcement?.className).toBe('sr-only')
+  })
+
+  it('should use assertive priority for screen reader announcement', () => {
+    // Clear any existing announcements first
+    const existingAnnouncements = document.querySelectorAll('[role="status"]')
+    existingAnnouncements.forEach(el => el.remove())
+
+    const TestComponent = defineComponent({
+      setup() {
+        return useAccessibility()
+      },
+      template: '<div></div>'
+    })
+
+    const wrapper = mount(TestComponent)
+    const vm = wrapper.vm as any
+    cleanup = () => {
+      wrapper.unmount()
+      // Clean up announcements
+      const announcements = document.querySelectorAll('[role="status"]')
+      announcements.forEach(el => el.remove())
+    }
+
+    vm.announceToScreenReader('Urgent message', 'assertive')
+
+    const announcements = document.querySelectorAll('[role="status"]')
+    const lastAnnouncement = announcements[announcements.length - 1]
+    expect(lastAnnouncement?.getAttribute('aria-live')).toBe('assertive')
+  })
+
+  it('should trap focus with Shift+Tab on first element', () => {
+    const container = document.createElement('div')
+    const button1 = document.createElement('button')
+    const button2 = document.createElement('button')
+    const button3 = document.createElement('button')
+
+    button1.textContent = 'Button 1'
+    button2.textContent = 'Button 2'
+    button3.textContent = 'Button 3'
+
+    container.appendChild(button1)
+    container.appendChild(button2)
+    container.appendChild(button3)
+    document.body.appendChild(container)
+
+    const TestComponent = defineComponent({
+      setup() {
+        return useAccessibility()
+      },
+      template: '<div></div>'
+    })
+
+    const wrapper = mount(TestComponent)
+    const vm = wrapper.vm as any
+    cleanup = () => {
+      wrapper.unmount()
+      document.body.removeChild(container)
+    }
+
+    const removeTrap = vm.trapFocus(container)
+
+    // Focus on first element
+    button1.focus()
+    expect(document.activeElement).toBe(button1)
+
+    // Simulate Shift+Tab from first element
+    const shiftTabEvent = new KeyboardEvent('keydown', {
+      key: 'Tab',
+      shiftKey: true,
+      bubbles: true,
+      cancelable: true
+    })
+
+    const preventDefaultSpy = vi.spyOn(shiftTabEvent, 'preventDefault')
+    container.dispatchEvent(shiftTabEvent)
+
+    // Should prevent default and focus should move to last element
+    expect(preventDefaultSpy).toHaveBeenCalled()
+
+    removeTrap()
+  })
+
+  it('should trap focus with Tab on last element', () => {
+    const container = document.createElement('div')
+    const button1 = document.createElement('button')
+    const button2 = document.createElement('button')
+    const button3 = document.createElement('button')
+
+    button1.textContent = 'Button 1'
+    button2.textContent = 'Button 2'
+    button3.textContent = 'Button 3'
+
+    container.appendChild(button1)
+    container.appendChild(button2)
+    container.appendChild(button3)
+    document.body.appendChild(container)
+
+    const TestComponent = defineComponent({
+      setup() {
+        return useAccessibility()
+      },
+      template: '<div></div>'
+    })
+
+    const wrapper = mount(TestComponent)
+    const vm = wrapper.vm as any
+    cleanup = () => {
+      wrapper.unmount()
+      document.body.removeChild(container)
+    }
+
+    const removeTrap = vm.trapFocus(container)
+
+    // Focus on last element
+    button3.focus()
+    expect(document.activeElement).toBe(button3)
+
+    // Simulate Tab from last element
+    const tabEvent = new KeyboardEvent('keydown', {
+      key: 'Tab',
+      shiftKey: false,
+      bubbles: true,
+      cancelable: true
+    })
+
+    const preventDefaultSpy = vi.spyOn(tabEvent, 'preventDefault')
+    container.dispatchEvent(tabEvent)
+
+    // Should prevent default and focus should move to first element
+    expect(preventDefaultSpy).toHaveBeenCalled()
+
+    removeTrap()
+  })
+
+  it('should not trap focus for non-Tab keys', () => {
+    const container = document.createElement('div')
+    const button1 = document.createElement('button')
+    const button2 = document.createElement('button')
+
+    container.appendChild(button1)
+    container.appendChild(button2)
+    document.body.appendChild(container)
+
+    const TestComponent = defineComponent({
+      setup() {
+        return useAccessibility()
+      },
+      template: '<div></div>'
+    })
+
+    const wrapper = mount(TestComponent)
+    const vm = wrapper.vm as any
+    cleanup = () => {
+      wrapper.unmount()
+      document.body.removeChild(container)
+    }
+
+    const removeTrap = vm.trapFocus(container)
+
+    button1.focus()
+
+    // Simulate Enter key (not Tab)
+    const enterEvent = new KeyboardEvent('keydown', {
+      key: 'Enter',
+      bubbles: true,
+      cancelable: true
+    })
+
+    const preventDefaultSpy = vi.spyOn(enterEvent, 'preventDefault')
+    container.dispatchEvent(enterEvent)
+
+    // Should not prevent default for non-Tab keys
+    expect(preventDefaultSpy).not.toHaveBeenCalled()
+
+    removeTrap()
+  })
+
+  it('should clean up event listeners when removeTrap is called', () => {
+    const container = document.createElement('div')
+    const button1 = document.createElement('button')
+    const button2 = document.createElement('button')
+
+    container.appendChild(button1)
+    container.appendChild(button2)
+    document.body.appendChild(container)
+
+    const removeEventListenerSpy = vi.spyOn(container, 'removeEventListener')
+
+    const TestComponent = defineComponent({
+      setup() {
+        return useAccessibility()
+      },
+      template: '<div></div>'
+    })
+
+    const wrapper = mount(TestComponent)
+    const vm = wrapper.vm as any
+    cleanup = () => {
+      wrapper.unmount()
+      document.body.removeChild(container)
+    }
+
+    const removeTrap = vm.trapFocus(container)
+    removeTrap()
+
+    expect(removeEventListenerSpy).toHaveBeenCalledWith('keydown', expect.any(Function))
+
+    removeEventListenerSpy.mockRestore()
+  })
 })

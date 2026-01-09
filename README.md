@@ -166,6 +166,10 @@ npm run dev          # 啟動開發伺服器（HMR）
 npm run build        # 建構生產版本
 npm run preview      # 預覽生產版本
 npm run type-check   # TypeScript 型別檢查
+npm run test         # 執行測試（監聽模式）
+npm run test:run     # 執行測試（單次）
+npm run test:coverage # 生成測試覆蓋率報告
+npm run test:ui      # 開啟測試 UI 介面
 ```
 
 ---
@@ -293,10 +297,20 @@ const { openModal } = usePhotoModal()
 - CSS 程式碼分割
 
 ### 4. 開發體驗
+
 - HMR 熱模組替換
 - Vue DevTools 支援
 - TypeScript 智能提示
 - ESLint + Prettier 程式碼規範
+
+### 5. 測試覆蓋
+
+- 🧪 Vitest 單元測試框架
+- ✅ 107 個測試案例全部通過
+- 📊 68.75% 程式碼覆蓋率
+- 🎯 完整的 Composable 測試
+- 🧩 主要組件測試
+- 🔗 整合測試
 
 ---
 
@@ -327,6 +341,8 @@ const { openModal } = usePhotoModal()
 - [遷移指南 (MIGRATION_GUIDE.md)](./MIGRATION_GUIDE.md) - 從 HTML 遷移到 Vue 3 的完整指南
 - [開發進度 (PROGRESS.md)](./PROGRESS.md) - 專案開發進度追蹤
 - [架構說明 (PROJECT_STRUCTURE.md)](./PROJECT_STRUCTURE.md) - 詳細的專案架構設計文件
+- [測試文件 (TESTING.md)](./TESTING.md) - 完整的測試指南與最佳實踐
+- [測試摘要 (TEST_SUMMARY.md)](./TEST_SUMMARY.md) - 快速測試概覽與統計
 
 ---
 

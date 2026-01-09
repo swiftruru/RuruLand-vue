@@ -32,7 +32,7 @@
           <!-- 專案圖片 -->
           <div class="detail-image-wrapper">
             <img
-              :src="project.image"
+              :data-src="project.image"
               :alt="project.title"
               class="detail-image"
               @click="$emit('openPhotoModal', project.image)"

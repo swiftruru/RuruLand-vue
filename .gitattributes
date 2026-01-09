@@ -1,13 +1,22 @@
 # Vue.js project language detection
 *.vue linguist-language=Vue
 
-# Ignore generated files from language statistics
-dist/* linguist-generated=true
-public/* linguist-vendored=true
-
 # TypeScript and JavaScript
 *.ts linguist-language=TypeScript
 *.js linguist-language=JavaScript
 
+# Documentation files (mark as documentation to reduce weight)
+*.md linguist-documentation=true
+*.txt linguist-documentation=true
+
+# Style files (mark as vendored to reduce weight in language stats)
+src/styles/** linguist-vendored=true
+
+# Ignore generated files from language statistics
+dist/* linguist-generated=true
+public/* linguist-vendored=true
+*.css.map linguist-generated=true
+
 # Exclude specific directories from language statistics
 node_modules/* linguist-vendored=true
+coverage/* linguist-generated=true

@@ -1,0 +1,49 @@
+/* Reading Progress Bar Styles */
+.reading-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    var(--primary-color) 0%,
+    var(--accent-color) 50%,
+    var(--primary-color) 100%
+  );
+  z-index: 9999;
+  transition: width 0.1s ease-out;
+  box-shadow: 0 2px 4px rgba(26, 95, 63, 0.3);
+}
+
+/* 添加輝光效果 */
+.reading-progress-bar::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100px;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.4) 50%,
+    transparent 100%
+  );
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100px);
+  }
+  100% {
+    transform: translateX(100px);
+  }
+}
+
+/* 手機版調整 */
+@media (max-width: 768px) {
+  .reading-progress-bar {
+    height: 3px;
+  }
+}

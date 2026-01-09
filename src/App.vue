@@ -1,5 +1,8 @@
 <template>
   <div id="app">
+    <!-- 閱讀進度條 -->
+    <ReadingProgress />
+
     <!-- 跳過連結 -->
     <a href="#main-content" class="skip-link">
       {{ t('common.accessibility.skipToMain') }}
@@ -64,6 +67,7 @@
 </template>
 
 <script setup lang="ts">
+import ReadingProgress from './components/ReadingProgress.vue'
 import NavigationBar from './components/NavigationBar.vue'
 import HeroSection from './components/HeroSection.vue'
 import AboutSection from './components/AboutSection.vue'
@@ -81,6 +85,7 @@ import { usePhotoModal } from './composables/usePhotoModal'
 import { useScrollAnimation } from './composables/useScrollAnimation'
 import { useCursorEffect } from './composables/useCursorEffect'
 import { useGoogleAnalytics } from './composables/useGoogleAnalytics'
+import { useLazyLoad } from './composables/useLazyLoad'
 
 // 語言切換
 const { t } = useLanguage()
@@ -116,4 +121,7 @@ useCursorEffect()
 
 // Google Analytics
 useGoogleAnalytics()
+
+// 圖片懶加載
+useLazyLoad()
 </script>

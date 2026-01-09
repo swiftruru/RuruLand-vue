@@ -3,7 +3,7 @@
     <div class="container">
       <div class="hero-profile">
         <img
-          :src="profileImage"
+          :data-src="profileImage"
           :alt="t('common.hero.name') + '的照片'"
           class="profile-photo"
           @click="$emit('openPhotoModal', profileImage)"

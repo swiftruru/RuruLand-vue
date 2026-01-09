@@ -3,7 +3,7 @@
     <!-- 專案圖片 -->
     <div class="project-image">
       <img
-        :src="project.image"
+        :data-src="project.image"
         :alt="project.title"
         @click="$emit('openPhotoModal', project.image)"
       />

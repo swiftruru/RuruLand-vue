@@ -1,39 +1,84 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 
-  <!-- Homepage (Chinese) -->
+  <!-- Homepage with images and alternate languages -->
   <url>
     <loc>https://ruruland.swift.moe/</loc>
-    <lastmod>2026-01-08</lastmod>
+    <lastmod>2026-01-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+
+    <!-- Alternate language versions -->
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://ruruland.swift.moe/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://ruruland.swift.moe/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ruruland.swift.moe/"/>
+
+    <!-- Main images -->
+    <image:image>
+      <image:loc>https://ruruland.swift.moe/images/profile.jpg</image:loc>
+      <image:caption>潘昱如 - Full Stack Developer 個人照片</image:caption>
+      <image:title>Yu-Ru Pan Profile Photo</image:title>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://ruruland.swift.moe/images/favicon/android-chrome-512x512.png</image:loc>
+      <image:caption>RuruLand Portfolio Logo</image:caption>
+      <image:title>RuruLand Portfolio Icon</image:title>
+    </image:image>
   </url>
 
   <!-- About Section -->
   <url>
     <loc>https://ruruland.swift.moe/#about</loc>
-    <lastmod>2026-01-08</lastmod>
+    <lastmod>2026-01-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://ruruland.swift.moe/#about"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ruruland.swift.moe/?lang=en#about"/>
   </url>
 
-  <!-- Projects Section -->
+  <!-- Timeline Section -->
+  <url>
+    <loc>https://ruruland.swift.moe/#timeline</loc>
+    <lastmod>2026-01-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://ruruland.swift.moe/#timeline"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ruruland.swift.moe/?lang=en#timeline"/>
+  </url>
+
+  <!-- Projects Section with project images -->
   <url>
     <loc>https://ruruland.swift.moe/#projects</loc>
-    <lastmod>2026-01-08</lastmod>
+    <lastmod>2026-01-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://ruruland.swift.moe/#projects"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ruruland.swift.moe/?lang=en#projects"/>
+
+    <image:image>
+      <image:loc>https://ruruland.swift.moe/images/projects/01_FLORIS.jpeg</image:loc>
+      <image:caption>FLORIS 香水電商網站 - Vue.js 專案展示</image:caption>
+      <image:title>FLORIS Perfume E-commerce Website</image:title>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://ruruland.swift.moe/images/projects/02_RuDjango.png</image:loc>
+      <image:caption>RuDjango 部落格系統 - Django 全端專案</image:caption>
+      <image:title>RuDjango Blog Platform</image:title>
+    </image:image>
   </url>
 
   <!-- Contact Section -->
   <url>
     <loc>https://ruruland.swift.moe/#contact</loc>
-    <lastmod>2026-01-08</lastmod>
+    <lastmod>2026-01-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://ruruland.swift.moe/#contact"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ruruland.swift.moe/?lang=en#contact"/>
   </url>
 
 </urlset>

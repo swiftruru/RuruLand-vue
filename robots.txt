@@ -1,15 +1,108 @@
 # robots.txt for ruruland.swift.moe
+# Generated: 2026-01-10
 
-# Allow all crawlers
+# Default crawlers - Allow all
 User-agent: *
 Allow: /
+Disallow: /api/
+Disallow: /*.json$
+Disallow: /sw.js
+Disallow: /workbox-*.js
 
-# Disallow crawling of specific paths (if any)
-# Disallow: /admin/
-# Disallow: /private/
+# Crawl optimization
+Crawl-delay: 0
 
-# Sitemap location
+# Sitemap locations
 Sitemap: https://ruruland.swift.moe/sitemap.xml
+Sitemap: https://ruruland.swift.moe/image-sitemap.xml
 
-# Crawl-delay (optional, in seconds)
-# Crawl-delay: 1
+# === AI Crawlers Configuration ===
+
+# OpenAI GPTBot (ChatGPT training data)
+User-agent: GPTBot
+Allow: /
+Crawl-delay: 1
+
+# Anthropic Claude-Web (Claude AI)
+User-agent: Claude-Web
+Allow: /
+Crawl-delay: 1
+
+# Anthropic ClaudeBot
+User-agent: ClaudeBot
+Allow: /
+Crawl-delay: 1
+
+# Google Extended (Bard/Gemini training)
+User-agent: Google-Extended
+Allow: /
+
+# Common Crawl
+User-agent: CCBot
+Allow: /
+
+# ByteDance/TikTok crawler
+User-agent: Bytespider
+Allow: /
+
+# Meta AI
+User-agent: FacebookBot
+Allow: /
+
+# Perplexity AI
+User-agent: PerplexityBot
+Allow: /
+
+# Cohere AI
+User-agent: cohere-ai
+Allow: /
+
+# Applebot Extended (Apple Intelligence)
+User-agent: Applebot-Extended
+Allow: /
+
+# Amazon Bot (Alexa)
+User-agent: Amazonbot
+Allow: /
+
+# === Search Engine Bots ===
+
+# Google
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /images/
+
+# Bing
+User-agent: Bingbot
+Allow: /
+
+# Yandex
+User-agent: Yandex
+Allow: /
+
+# Baidu (中文市場)
+User-agent: Baiduspider
+Allow: /
+
+# DuckDuckGo
+User-agent: DuckDuckBot
+Allow: /
+
+# === SEO Tools - Block to save bandwidth ===
+
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: BLEXBot
+Disallow: /

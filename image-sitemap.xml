@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <url>
+    <loc>https://ruruland.swift.moe/</loc>
+
+    <!-- Profile Photo -->
+    <image:image>
+      <image:loc>https://ruruland.swift.moe/images/profile.jpg</image:loc>
+      <image:caption>潘昱如 - Full Stack Developer 專業照片，展示友善且專業的形象</image:caption>
+      <image:geo_location>Taipei, Taiwan</image:geo_location>
+      <image:title>Yu-Ru Pan - Full Stack Developer Portrait</image:title>
+    </image:image>
+
+    <!-- Project 1: FLORIS -->
+    <image:image>
+      <image:loc>https://ruruland.swift.moe/images/projects/01_FLORIS.jpeg</image:loc>
+      <image:caption>FLORIS 香水電商網站介面展示 - 使用 Vue.js 開發的現代化電商平台</image:caption>
+      <image:title>FLORIS Perfume E-commerce Website Screenshot</image:title>
+    </image:image>
+
+    <!-- Project 2: RuDjango -->
+    <image:image>
+      <image:loc>https://ruruland.swift.moe/images/projects/02_RuDjango.png</image:loc>
+      <image:caption>RuDjango 部落格系統截圖 - Django 框架構建的全端專案展示</image:caption>
+      <image:title>RuDjango Blog Platform Screenshot</image:title>
+    </image:image>
+
+    <!-- Mascot/Logo -->
+    <image:image>
+      <image:loc>https://ruruland.swift.moe/images/loader/yubiko-mascot.png</image:loc>
+      <image:caption>Yubiko 吉祥物 - RuruLand 品牌形象角色</image:caption>
+      <image:title>Yubiko Mascot Character</image:title>
+    </image:image>
+
+    <!-- Favicon/Logo -->
+    <image:image>
+      <image:loc>https://ruruland.swift.moe/images/favicon/android-chrome-512x512.png</image:loc>
+      <image:caption>RuruLand Portfolio Logo - 網站圖示</image:caption>
+      <image:title>RuruLand Portfolio Icon</image:title>
+    </image:image>
+
+    <!-- Apple Touch Icon -->
+    <image:image>
+      <image:loc>https://ruruland.swift.moe/images/favicon/apple-touch-icon.png</image:loc>
+      <image:caption>RuruLand Portfolio Apple 圖示</image:caption>
+      <image:title>RuruLand Apple Touch Icon</image:title>
+    </image:image>
+
+  </url>
+
+</urlset>

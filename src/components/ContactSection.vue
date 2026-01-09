@@ -1,16 +1,16 @@
 <template>
   <section id="contact" class="contact">
     <div class="container">
-      <h2 class="section-title">{{ t('contact.title') }}</h2>
+      <h2 class="section-title fade-up">{{ t('contact.title') }}</h2>
 
-      <div class="contact-content fade-in">
-        <div class="contact-intro">
+      <div class="contact-content">
+        <div class="contact-intro fade-up delay-100">
           <p>{{ t('contact.intro') }}</p>
         </div>
 
         <div class="contact-grid">
           <!-- Email -->
-          <div class="contact-item">
+          <div class="contact-item fade-up delay-100">
             <h3>{{ t('contact.email.title') }}</h3>
             <a href="mailto:ruru@swift.moe" class="contact-link" @click="trackContact('email')">
               {{ t('contact.email.address') }}
@@ -18,7 +18,7 @@
           </div>
 
           <!-- Phone -->
-          <div class="contact-item">
+          <div class="contact-item fade-up delay-200">
             <h3>{{ t('contact.phone.title') }}</h3>
             <a href="tel:+886977006588" class="contact-link" @click="trackContact('phone')">
               {{ t('contact.phone.number') }}
@@ -26,7 +26,7 @@
           </div>
 
           <!-- GitHub -->
-          <div class="contact-item">
+          <div class="contact-item fade-up delay-300">
             <h3>{{ t('contact.github.title') }}</h3>
             <a
               href="https://github.com/swiftruru"
@@ -40,7 +40,7 @@
           </div>
 
           <!-- CakeResume -->
-          <div class="contact-item">
+          <div class="contact-item fade-up delay-400">
             <h3>{{ t('contact.cakeresume.title') }}</h3>
             <a
               href="https://www.cake.me/s--n_h9IMsdC_tvtnXCUcLp7Q--/sandyru2025"
@@ -54,7 +54,7 @@
           </div>
 
           <!-- Website -->
-          <div class="contact-item">
+          <div class="contact-item fade-up delay-500">
             <h3>{{ t('contact.website.title') }}</h3>
             <a
               href="https://swift.moe"
@@ -68,22 +68,24 @@
           </div>
 
           <!-- Location -->
-          <div class="contact-item">
+          <div class="contact-item fade-up delay-100">
             <h3>{{ t('contact.location.title') }}</h3>
             <p class="contact-text">{{ t('contact.location.city') }}</p>
           </div>
         </div>
 
         <!-- 聯絡表單介紹 -->
-        <div class="contact-form-intro">
+        <div class="contact-form-intro fade-up delay-200">
           <p>{{ t('contact.formIntro') }}</p>
         </div>
 
         <!-- 聯絡表單 -->
-        <ContactForm />
+        <div class="fade-up delay-300">
+          <ContactForm />
+        </div>
 
         <!-- 履歷列印區 -->
-        <div class="resume-actions fade-in">
+        <div class="resume-actions fade-up delay-400">
           <button
             class="btn btn-primary resume-btn print-resume-btn"
             @click="handlePrint"

@@ -1,22 +1,26 @@
 <template>
   <section id="projects" class="projects">
     <div class="container">
-      <h2 class="section-title">{{ t('projects.title') }}</h2>
+      <h2 class="section-title fade-up">{{ t('projects.title') }}</h2>
 
-      <div class="projects-grid fade-in">
+      <div class="projects-grid">
         <!-- FLORIS 香水電商網站 -->
-        <ProjectCard
-          :project="perfumeProject"
-          @open-photo-modal="$emit('openPhotoModal', $event)"
-          @open-detail-modal="$emit('openDetailModal', $event)"
-        />
+        <div class="zoom-in delay-100">
+          <ProjectCard
+            :project="perfumeProject"
+            @open-photo-modal="$emit('openPhotoModal', $event)"
+            @open-detail-modal="$emit('openDetailModal', $event)"
+          />
+        </div>
 
         <!-- RuDjango 部落格網站 -->
-        <ProjectCard
-          :project="djangoProject"
-          @open-photo-modal="$emit('openPhotoModal', $event)"
-          @open-detail-modal="$emit('openDetailModal', $event)"
-        />
+        <div class="zoom-in delay-300">
+          <ProjectCard
+            :project="djangoProject"
+            @open-photo-modal="$emit('openPhotoModal', $event)"
+            @open-detail-modal="$emit('openDetailModal', $event)"
+          />
+        </div>
       </div>
     </div>
   </section>

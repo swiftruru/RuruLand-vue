@@ -1,68 +1,74 @@
 <template>
   <div id="app">
-    <!-- 閱讀進度條 -->
-    <ReadingProgress />
+    <!-- 骨架屏載入畫面 -->
+    <SkeletonLoader v-if="isLoading" />
 
-    <!-- 跳過連結 -->
-    <a href="#main-content" class="skip-link">
-      {{ t('common.accessibility.skipToMain') }}
-    </a>
+    <!-- 實際內容 -->
+    <div v-show="!isLoading" class="app-content">
+      <!-- 閱讀進度條 -->
+      <ReadingProgress />
 
-    <!-- 頁面載入動畫 -->
-    <PageLoader />
+      <!-- 跳過連結 -->
+      <a href="#main-content" class="skip-link">
+        {{ t('common.accessibility.skipToMain') }}
+      </a>
 
-    <!-- 導航列 -->
-    <NavigationBar />
+      <!-- 頁面載入動畫 -->
+      <PageLoader />
 
-    <!-- 主要內容 -->
-    <main id="main-content" role="main">
-      <!-- Hero 區塊 -->
-      <HeroSection @open-photo-modal="openPhotoModal" />
+      <!-- 導航列 -->
+      <NavigationBar />
 
-      <!-- 關於我區塊 -->
-      <AboutSection />
+      <!-- 主要內容 -->
+      <main id="main-content" role="main">
+        <!-- Hero 區塊 -->
+        <HeroSection @open-photo-modal="openPhotoModal" />
 
-      <!-- 職涯歷程區塊 -->
-      <TimelineSection />
+        <!-- 關於我區塊 -->
+        <AboutSection />
 
-      <!-- 專案展示區塊 -->
-      <ProjectsSection
-        @open-photo-modal="openPhotoModal"
-        @open-detail-modal="openProjectDetail"
+        <!-- 職涯歷程區塊 -->
+        <TimelineSection />
+
+        <!-- 專案展示區塊 -->
+        <ProjectsSection
+          @open-photo-modal="openPhotoModal"
+          @open-detail-modal="openProjectDetail"
+        />
+
+        <!-- 聯絡區塊 -->
+        <ContactSection />
+      </main>
+
+      <!-- 照片放大 Modal -->
+      <PhotoModal
+        :is-open="isModalOpen"
+        :image-src="currentImage"
+        @close="closeModal"
       />
 
-      <!-- 聯絡區塊 -->
-      <ContactSection />
-    </main>
+      <!-- 專案詳細 Modal -->
+      <ProjectDetailModal
+        :is-open="isProjectDetailOpen"
+        :project="currentProject"
+        @close="closeProjectDetail"
+        @open-photo-modal="openPhotoModal"
+      />
 
-    <!-- 照片放大 Modal -->
-    <PhotoModal
-      :is-open="isModalOpen"
-      :image-src="currentImage"
-      @close="closeModal"
-    />
+      <!-- Footer -->
+      <footer role="contentinfo">
+        <div class="container">
+          <!-- 社群分享 -->
+          <SocialShare />
 
-    <!-- 專案詳細 Modal -->
-    <ProjectDetailModal
-      :is-open="isProjectDetailOpen"
-      :project="currentProject"
-      @close="closeProjectDetail"
-      @open-photo-modal="openPhotoModal"
-    />
+          <p>{{ t('common.footer.copyright') }}</p>
+          <p>{{ t('common.footer.madeWith') }}</p>
+        </div>
+      </footer>
 
-    <!-- Footer -->
-    <footer role="contentinfo">
-      <div class="container">
-        <!-- 社群分享 -->
-        <SocialShare />
-
-        <p>{{ t('common.footer.copyright') }}</p>
-        <p>{{ t('common.footer.madeWith') }}</p>
-      </div>
-    </footer>
-
-    <!-- 無障礙控制 -->
-    <AccessibilityControls />
+      <!-- 無障礙控制 -->
+      <AccessibilityControls />
+    </div>
   </div>
 </template>
 
@@ -79,13 +85,17 @@ import PageLoader from './components/PageLoader.vue'
 import SocialShare from './components/SocialShare.vue'
 import ProjectDetailModal from './components/ProjectDetailModal.vue'
 import AccessibilityControls from './components/AccessibilityControls.vue'
-import { ref } from 'vue'
+import SkeletonLoader from './components/SkeletonLoader.vue'
+import { ref, onMounted } from 'vue'
 import { useLanguage } from './composables/useLanguage'
 import { usePhotoModal } from './composables/usePhotoModal'
 import { useScrollAnimation } from './composables/useScrollAnimation'
 import { useCursorEffect } from './composables/useCursorEffect'
 import { useGoogleAnalytics } from './composables/useGoogleAnalytics'
 import { useLazyLoad } from './composables/useLazyLoad'
+
+// 載入狀態管理
+const isLoading = ref(true)
 
 // 語言切換
 const { t } = useLanguage()
@@ -124,4 +134,28 @@ useGoogleAnalytics()
 
 // 圖片懶加載
 useLazyLoad()
+
+// 頁面載入完成
+onMounted(() => {
+  // 設定最小載入時間 500ms，確保骨架屏不會閃爍
+  setTimeout(() => {
+    isLoading.value = false
+  }, 500)
+})
 </script>
+
+<style>
+/* App content fade in */
+.app-content {
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+</style>

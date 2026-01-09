@@ -1,15 +1,15 @@
 <template>
   <section id="timeline" class="timeline">
     <div class="container">
-      <h2 class="section-title">{{ t('timeline.title') }}</h2>
+      <h2 class="section-title fade-up">{{ t('timeline.title') }}</h2>
 
-      <div class="timeline-content fade-in">
+      <div class="timeline-content">
         <!-- 工作經驗 -->
         <div class="timeline-category">
-          <h3 class="timeline-category-title">{{ t('timeline.workExperience.title') }}</h3>
+          <h3 class="timeline-category-title fade-up delay-100">{{ t('timeline.workExperience.title') }}</h3>
           <div class="timeline-items">
             <!-- 軟體工程師 - 台灣萬事達金流 -->
-            <div class="timeline-item">
+            <div class="timeline-item fade-left delay-200">
               <div class="timeline-marker"></div>
               <div class="timeline-card">
                 <div class="timeline-header">
@@ -26,7 +26,7 @@
             </div>
 
             <!-- 數位學伴計畫帶班老師 - 教育部 -->
-            <div class="timeline-item">
+            <div class="timeline-item fade-left delay-300">
               <div class="timeline-marker"></div>
               <div class="timeline-card">
                 <div class="timeline-header">
@@ -43,7 +43,7 @@
             </div>
 
             <!-- 資管系教學助理 - 中華大學 -->
-            <div class="timeline-item">
+            <div class="timeline-item fade-left delay-400">
               <div class="timeline-marker"></div>
               <div class="timeline-card">
                 <div class="timeline-header">
@@ -63,10 +63,10 @@
 
         <!-- 教育背景 -->
         <div class="timeline-category">
-          <h3 class="timeline-category-title">{{ t('timeline.education.title') }}</h3>
+          <h3 class="timeline-category-title fade-up delay-100">{{ t('timeline.education.title') }}</h3>
           <div class="timeline-items">
             <!-- 碩士班 -->
-            <div class="timeline-item">
+            <div class="timeline-item fade-right delay-200">
               <div class="timeline-marker"></div>
               <div class="timeline-card">
                 <div class="timeline-header">
@@ -86,7 +86,7 @@
             </div>
 
             <!-- Build School 培訓 -->
-            <div class="timeline-item">
+            <div class="timeline-item fade-right delay-300">
               <div class="timeline-marker"></div>
               <div class="timeline-card">
                 <div class="timeline-header">
@@ -105,8 +105,8 @@
 
         <!-- 專業證照 -->
         <div class="timeline-category">
-          <h3 class="timeline-category-title">{{ t('timeline.certifications.title') }}</h3>
-          <div class="certifications-grid">
+          <h3 class="timeline-category-title fade-up delay-100">{{ t('timeline.certifications.title') }}</h3>
+          <div class="certifications-grid fade-up delay-200">
             <div
               v-for="(cert, index) in certifications"
               :key="index"

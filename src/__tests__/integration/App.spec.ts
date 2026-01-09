@@ -52,6 +52,89 @@ const i18n = createI18n({
           copyright: '© 2026 Ruru Pan. All rights reserved.',
           madeWith: 'Made with ❤️ using Vue 3 + TypeScript'
         }
+      },
+      about: {
+        title: '關於我',
+        intro: '我是一名全端開發者',
+        skills: {
+          backend: '後端技術',
+          frontend: '前端技術',
+          tools: '開發工具',
+          experience: '專業認證與經驗'
+        },
+        experienceList: {
+          exp1: '2+ 年金流系統開發經驗',
+          exp2: '協助取得 PCI DSS 4.0 國際認證',
+          exp3: '熟悉雲端部署與 CI/CD 流程',
+          exp4: '具備系統優化與效能調校經驗'
+        },
+        resume: {
+          print: '列印履歷'
+        }
+      },
+      timeline: {
+        title: '職涯歷程',
+        workExperience: {
+          title: '工作經歷',
+          job1: {
+            title: '全端工程師',
+            company: '某科技公司',
+            period: '2022 - 現在'
+          },
+          job2: {
+            title: '前端工程師',
+            company: '某新創公司',
+            period: '2020 - 2022'
+          }
+        }
+      },
+      projects: {
+        title: '作品集',
+        techStack: '技術棧',
+        highlights: '專案亮點',
+        viewDetails: '查看詳情',
+        viewWebsite: '查看網站',
+        challenge: '專案挑戰',
+        problem: '問題描述',
+        solution: '解決方案'
+      },
+      contact: {
+        title: '聯絡我',
+        intro: '歡迎與我聯繫',
+        email: {
+          title: 'Email',
+          address: 'ruru@swift.moe'
+        },
+        phone: {
+          title: '電話',
+          number: '+886 977 006 588'
+        },
+        github: {
+          title: 'GitHub',
+          username: '@swiftruru'
+        },
+        cakeresume: {
+          title: 'CakeResume',
+          text: '查看我的履歷'
+        },
+        website: {
+          title: '個人網站',
+          url: 'swift.moe'
+        },
+        location: {
+          title: '地點',
+          city: '台灣 台北'
+        },
+        formIntro: '或填寫以下表單',
+        form: {
+          name: '姓名',
+          email: 'Email',
+          message: '訊息',
+          send: '送出',
+          sending: '傳送中...',
+          success: '訊息已成功送出！',
+          error: '傳送失敗，請稍後再試'
+        }
       }
     }
   }

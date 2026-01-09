@@ -1,5 +1,5 @@
-import { describe, it, expect, beforeEach, vi } from 'vitest'
-import { mount } from '@vue/test-utils'
+import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest'
+import { mount, VueWrapper } from '@vue/test-utils'
 import { createI18n } from 'vue-i18n'
 import ContactForm from '../../components/ContactForm.vue'
 import * as googleAnalytics from '../../composables/useGoogleAnalytics'
@@ -35,14 +35,23 @@ const i18n = createI18n({
 })
 
 describe('ContactForm', () => {
+  let wrapper: VueWrapper | null = null
+
   beforeEach(() => {
     vi.clearAllMocks()
     // Mock fetch
     global.fetch = vi.fn()
   })
 
+  afterEach(() => {
+    if (wrapper) {
+      wrapper.unmount()
+      wrapper = null
+    }
+  })
+
   it('should render form fields correctly', () => {
-    const wrapper = mount(ContactForm, {
+    wrapper = mount(ContactForm, {
       global: {
         plugins: [i18n]
       }
@@ -55,7 +64,7 @@ describe('ContactForm', () => {
   })
 
   it('should render labels with correct text', () => {
-    const wrapper = mount(ContactForm, {
+    wrapper = mount(ContactForm, {
       global: {
         plugins: [i18n]
       }
@@ -68,7 +77,7 @@ describe('ContactForm', () => {
   })
 
   it('should have submit button', () => {
-    const wrapper = mount(ContactForm, {
+    wrapper = mount(ContactForm, {
       global: {
         plugins: [i18n]
       }
@@ -80,7 +89,7 @@ describe('ContactForm', () => {
   })
 
   it('should bind form data with v-model', async () => {
-    const wrapper = mount(ContactForm, {
+    wrapper = mount(ContactForm, {
       global: {
         plugins: [i18n]
       }
@@ -103,20 +112,16 @@ describe('ContactForm', () => {
   })
 
   it('should disable form during submission', async () => {
-    const wrapper = mount(ContactForm, {
+    wrapper = mount(ContactForm, {
       global: {
         plugins: [i18n]
       }
     })
 
-    // Mock fetch to delay response
-    ;(global.fetch as any).mockImplementation(() =>
-      new Promise(resolve =>
-        setTimeout(() => resolve({
-          json: async () => ({ success: true })
-        }), 100)
-      )
-    )
+    // Mock fetch to return immediately
+    ;(global.fetch as any).mockResolvedValue({
+      json: async () => ({ success: true })
+    })
 
     const form = wrapper.find('form')
     const submitPromise = form.trigger('submit')
@@ -131,33 +136,40 @@ describe('ContactForm', () => {
     expect(submitBtn.attributes('disabled')).toBe('')
 
     await submitPromise
+    await wrapper.vm.$nextTick()
+
   })
 
   it('should show loading text during submission', async () => {
-    const wrapper = mount(ContactForm, {
+    wrapper = mount(ContactForm, {
       global: {
         plugins: [i18n]
       }
     })
 
-    ;(global.fetch as any).mockImplementation(() =>
-      new Promise(resolve =>
-        setTimeout(() => resolve({
-          json: async () => ({ success: true })
-        }), 100)
-      )
-    )
+    let resolvePromise: (value: any) => void
+    const mockFetch = new Promise(resolve => {
+      resolvePromise = resolve
+    })
+
+    ;(global.fetch as any).mockReturnValue(mockFetch)
 
     const form = wrapper.find('form')
-    await form.trigger('submit')
+    const submitPromise = form.trigger('submit')
 
     await wrapper.vm.$nextTick()
 
     expect(wrapper.text()).toContain('傳送中...')
+
+    // 完成 promise
+    resolvePromise!({
+      json: async () => ({ success: true })
+    })
+    await submitPromise
   })
 
   it('should show success message on successful submission', async () => {
-    const wrapper = mount(ContactForm, {
+    wrapper = mount(ContactForm, {
       global: {
         plugins: [i18n]
       }
@@ -182,7 +194,7 @@ describe('ContactForm', () => {
   })
 
   it('should show error message on failed submission', async () => {
-    const wrapper = mount(ContactForm, {
+    wrapper = mount(ContactForm, {
       global: {
         plugins: [i18n]
       }
@@ -202,7 +214,7 @@ describe('ContactForm', () => {
   })
 
   it('should show error message on network error', async () => {
-    const wrapper = mount(ContactForm, {
+    wrapper = mount(ContactForm, {
       global: {
         plugins: [i18n]
       }
@@ -220,7 +232,7 @@ describe('ContactForm', () => {
   })
 
   it('should clear form data after successful submission', async () => {
-    const wrapper = mount(ContactForm, {
+    wrapper = mount(ContactForm, {
       global: {
         plugins: [i18n]
       }
@@ -248,7 +260,7 @@ describe('ContactForm', () => {
   })
 
   it('should track success event with Google Analytics', async () => {
-    const wrapper = mount(ContactForm, {
+    wrapper = mount(ContactForm, {
       global: {
         plugins: [i18n]
       }
@@ -270,7 +282,7 @@ describe('ContactForm', () => {
   })
 
   it('should track error event with Google Analytics', async () => {
-    const wrapper = mount(ContactForm, {
+    wrapper = mount(ContactForm, {
       global: {
         plugins: [i18n]
       }
@@ -291,7 +303,7 @@ describe('ContactForm', () => {
   })
 
   it('should have required attributes on inputs', () => {
-    const wrapper = mount(ContactForm, {
+    wrapper = mount(ContactForm, {
       global: {
         plugins: [i18n]
       }
@@ -304,7 +316,7 @@ describe('ContactForm', () => {
   })
 
   it('should have correct input types', () => {
-    const wrapper = mount(ContactForm, {
+    wrapper = mount(ContactForm, {
       global: {
         plugins: [i18n]
       }

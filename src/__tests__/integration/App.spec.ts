@@ -179,7 +179,7 @@ const i18n = createI18n({
         intro: '歡迎與我聯繫',
         email: {
           title: 'Email',
-          address: 'ruru@swift.moe'
+          address: "ruru{'@'}swift.moe"
         },
         phone: {
           title: '電話',
@@ -187,7 +187,7 @@ const i18n = createI18n({
         },
         github: {
           title: 'GitHub',
-          username: '@swiftruru'
+          username: "{'@'}swiftruru"
         },
         cakeresume: {
           title: 'CakeResume',

@@ -29,7 +29,7 @@ const i18n = createI18n({
         formIntro: '或填寫以下表單',
         email: {
           title: 'Email',
-          address: 'ruru@swift.moe'
+          address: "ruru{'@'}swift.moe"
         },
         phone: {
           title: '電話',
@@ -37,7 +37,7 @@ const i18n = createI18n({
         },
         github: {
           title: 'GitHub',
-          username: '@swiftruru'
+          username: "{'@'}swiftruru"
         },
         cakeresume: {
           title: 'CakeResume',

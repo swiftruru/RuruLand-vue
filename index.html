@@ -66,13 +66,19 @@
     <link rel="preconnect" href="https://www.googletagmanager.com">
     <link rel="dns-prefetch" href="https://www.google-analytics.com">
 
-    <!-- Google tag (gtag.js) -->
+    <!-- Google tag (gtag.js) with privacy settings -->
     <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-Q4RFNMK35D"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-Q4RFNMK35D');
+      gtag('config', 'G-Q4RFNMK35D', {
+        'anonymize_ip': true,
+        'cookie_flags': 'SameSite=None;Secure',
+        'cookie_expires': 63072000,
+        'allow_google_signals': false,
+        'allow_ad_personalization_signals': false
+      });
     </script>
 
     <!-- Structured Data (Schema.org JSON-LD) -->

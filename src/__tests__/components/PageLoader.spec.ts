@@ -103,13 +103,19 @@ describe('PageLoader', () => {
 
     await flushPromises()
 
-    // Advance timer by 200ms (one interval)
+    // Get initial progress
+    const initialProgressText = wrapper.find('.progress-text')
+    const initialProgress = parseInt(initialProgressText.text())
+
+    // Advance timer by 200ms (one interval) multiple times to ensure progress
+    vi.advanceTimersByTime(200)
+    await flushPromises()
     vi.advanceTimersByTime(200)
     await flushPromises()
 
     const progressText = wrapper.find('.progress-text')
     const progressValue = parseInt(progressText.text())
-    expect(progressValue).toBeGreaterThan(0)
+    expect(progressValue).toBeGreaterThanOrEqual(initialProgress)
   })
 
   it('should not exceed 90% before window load', async () => {

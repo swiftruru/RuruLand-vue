@@ -51,6 +51,14 @@ const i18n = createI18n({
         footer: {
           copyright: '© 2026 Ruru Pan. All rights reserved.',
           madeWith: 'Made with ❤️ using Vue 3 + TypeScript'
+        },
+        modal: {
+          imageAlt: '放大圖片',
+          hint: '點擊關閉'
+        },
+        share: {
+          title: '分享',
+          copy: '複製連結'
         }
       },
       about: {
@@ -85,7 +93,28 @@ const i18n = createI18n({
             title: '前端工程師',
             company: '某新創公司',
             period: '2020 - 2022'
+          },
+          job3: {
+            title: '初級工程師',
+            company: '某公司',
+            period: '2019 - 2020'
           }
+        },
+        education: {
+          title: '教育背景',
+          master: {
+            degree: '資訊工程碩士',
+            school: '某大學',
+            period: '2017 - 2019',
+            status: '已畢業'
+          },
+          buildSchool: {
+            title: 'Build School',
+            period: '2018'
+          }
+        },
+        certifications: {
+          title: '專業認證'
         }
       },
       projects: {
@@ -96,7 +125,54 @@ const i18n = createI18n({
         viewWebsite: '查看網站',
         challenge: '專案挑戰',
         problem: '問題描述',
-        solution: '解決方案'
+        solution: '解決方案',
+        clickToEnlarge: '點擊放大',
+        about: '關於專案',
+        perfume: {
+          title: '香水電商平台',
+          url: 'https://perfume.example.com',
+          description: '香水電商平台描述',
+          responsibilities: {
+            title: '工作職責',
+            item1: '職責1',
+            item2: '職責2',
+            item3: '職責3',
+            item4: '職責4'
+          },
+          techStack: {
+            tech1: 'Vue 3',
+            tech2: 'TypeScript',
+            tech3: 'Pinia',
+            tech4: 'Vite',
+            tech5: 'Tailwind CSS',
+            tech6: 'REST API',
+            tech7: 'Docker'
+          }
+        },
+        django: {
+          title: 'Django 後台系統',
+          url: 'https://django.example.com',
+          description: 'Django 後台系統描述',
+          features: {
+            title: '主要功能',
+            item1: '功能1',
+            item2: '功能2',
+            item3: '功能3',
+            item4: '功能4'
+          },
+          techStack: {
+            tech1: 'Django',
+            tech2: 'Python',
+            tech3: 'PostgreSQL',
+            tech4: 'Redis',
+            tech5: 'Celery'
+          },
+          highlights: {
+            item1: '亮點1',
+            item2: '亮點2',
+            item3: '亮點3'
+          }
+        }
       },
       contact: {
         title: '聯絡我',
@@ -128,13 +204,20 @@ const i18n = createI18n({
         formIntro: '或填寫以下表單',
         form: {
           name: '姓名',
+          namePlaceholder: '請輸入您的姓名',
           email: 'Email',
+          emailPlaceholder: '請輸入您的 Email',
+          subject: '主旨',
+          subjectPlaceholder: '請輸入主旨',
           message: '訊息',
+          messagePlaceholder: '請輸入您的訊息',
           send: '送出',
+          submit: '送出',
           sending: '傳送中...',
           success: '訊息已成功送出！',
           error: '傳送失敗，請稍後再試'
-        }
+        },
+        floatingButton: '聯絡我'
       }
     }
   }

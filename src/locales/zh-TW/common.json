@@ -22,6 +22,7 @@
     "imageAlt": "放大圖片",
     "hint": "按 ESC 關閉"
   },
+  "close": "關閉",
   "share": {
     "title": "分享此頁面",
     "copy": "複製連結",

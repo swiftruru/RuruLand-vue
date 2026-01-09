@@ -22,6 +22,7 @@
     "imageAlt": "Enlarged image",
     "hint": "Press ESC to close"
   },
+  "close": "Close",
   "share": {
     "title": "Share This Page",
     "copy": "Copy Link",

@@ -26,6 +26,7 @@
     "title": "所在地",
     "city": "台北市士林區"
   },
+  "floatingButton": "快速聯絡",
   "form": {
     "name": "姓名",
     "namePlaceholder": "請輸入您的姓名",

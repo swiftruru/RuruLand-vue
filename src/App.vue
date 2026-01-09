@@ -68,6 +68,9 @@
 
       <!-- 無障礙控制 -->
       <AccessibilityControls />
+
+      <!-- 浮動聯絡按鈕 -->
+      <FloatingContactButton />
     </div>
   </div>
 </template>
@@ -86,6 +89,7 @@ import SocialShare from './components/SocialShare.vue'
 import ProjectDetailModal from './components/ProjectDetailModal.vue'
 import AccessibilityControls from './components/AccessibilityControls.vue'
 import SkeletonLoader from './components/SkeletonLoader.vue'
+import FloatingContactButton from './components/FloatingContactButton.vue'
 import { ref, onMounted } from 'vue'
 import { useLanguage } from './composables/useLanguage'
 import { usePhotoModal } from './composables/usePhotoModal'

@@ -26,6 +26,7 @@
     "title": "Location",
     "city": "Shilin District, Taipei City"
   },
+  "floatingButton": "Quick Contact",
   "form": {
     "name": "Name",
     "namePlaceholder": "Enter your name",

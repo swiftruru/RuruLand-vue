@@ -1,4 +1,4 @@
-import { describe, it, expect, beforeEach } from 'vitest'
+import { describe, it, expect, beforeEach, vi } from 'vitest'
 import { mount } from '@vue/test-utils'
 import { createI18n } from 'vue-i18n'
 import FloatingContactButton from '../../components/FloatingContactButton.vue'
@@ -180,5 +180,122 @@ describe('FloatingContactButton', () => {
     expect(values[0].text()).toBe('ruru@swift.moe')
     expect(values[1].text()).toBe('@swiftruru')
     expect(values[2].text()).toBe('0977-006-588')
+  })
+
+  it('should close panel when Escape key is pressed', async () => {
+    const mainButton = wrapper.find('.contact-main-btn')
+    await mainButton.trigger('click')
+
+    expect(wrapper.vm.isExpanded).toBe(true)
+
+    // Simulate Escape key press
+    const event = new KeyboardEvent('keydown', { key: 'Escape' })
+    document.dispatchEvent(event)
+    await wrapper.vm.$nextTick()
+
+    expect(wrapper.vm.isExpanded).toBe(false)
+  })
+
+  it('should not close panel when other keys are pressed', async () => {
+    const mainButton = wrapper.find('.contact-main-btn')
+    await mainButton.trigger('click')
+
+    expect(wrapper.vm.isExpanded).toBe(true)
+
+    // Simulate Enter key press
+    const event = new KeyboardEvent('keydown', { key: 'Enter' })
+    document.dispatchEvent(event)
+    await wrapper.vm.$nextTick()
+
+    expect(wrapper.vm.isExpanded).toBe(true)
+  })
+
+  it('should not close panel when Escape is pressed and panel is closed', async () => {
+    expect(wrapper.vm.isExpanded).toBe(false)
+
+    // Simulate Escape key press when panel is already closed
+    const event = new KeyboardEvent('keydown', { key: 'Escape' })
+    document.dispatchEvent(event)
+    await wrapper.vm.$nextTick()
+
+    expect(wrapper.vm.isExpanded).toBe(false)
+  })
+
+  it('should add keydown event listener on mount', () => {
+    const addEventListenerSpy = vi.spyOn(document, 'addEventListener')
+
+    const newWrapper = mount(FloatingContactButton, {
+      global: {
+        plugins: [i18n]
+      }
+    })
+
+    expect(addEventListenerSpy).toHaveBeenCalledWith('keydown', expect.any(Function))
+
+    newWrapper.unmount()
+    addEventListenerSpy.mockRestore()
+  })
+
+  it('should remove keydown event listener on unmount', () => {
+    const removeEventListenerSpy = vi.spyOn(document, 'removeEventListener')
+
+    const newWrapper = mount(FloatingContactButton, {
+      global: {
+        plugins: [i18n]
+      }
+    })
+
+    newWrapper.unmount()
+
+    expect(removeEventListenerSpy).toHaveBeenCalledWith('keydown', expect.any(Function))
+
+    removeEventListenerSpy.mockRestore()
+  })
+
+  it('should call trackContact with correct method when contact item is clicked', async () => {
+    const consoleLogSpy = vi.spyOn(console, 'log')
+
+    const mainButton = wrapper.find('.contact-main-btn')
+    await mainButton.trigger('click')
+
+    const contactItems = wrapper.findAll('.contact-item')
+    expect(contactItems.length).toBeGreaterThan(0)
+
+    // Click the first contact item (email)
+    await contactItems[0].trigger('click')
+
+    expect(consoleLogSpy).toHaveBeenCalledWith('Contact via email')
+
+    consoleLogSpy.mockRestore()
+  })
+
+  it('should call gtag when window.gtag exists', async () => {
+    const mockGtag = vi.fn()
+    ;(window as any).gtag = mockGtag
+
+    const mainButton = wrapper.find('.contact-main-btn')
+    await mainButton.trigger('click')
+
+    const contactItems = wrapper.findAll('.contact-item')
+    await contactItems[0].trigger('click')
+
+    expect(mockGtag).toHaveBeenCalledWith('event', 'contact_click', {
+      method: 'email'
+    })
+
+    delete (window as any).gtag
+  })
+
+  it('should not throw error when window.gtag does not exist', async () => {
+    delete (window as any).gtag
+
+    const mainButton = wrapper.find('.contact-main-btn')
+    await mainButton.trigger('click')
+
+    const contactItems = wrapper.findAll('.contact-item')
+
+    expect(async () => {
+      await contactItems[0].trigger('click')
+    }).not.toThrow()
   })
 })

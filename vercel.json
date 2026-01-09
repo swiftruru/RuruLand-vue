@@ -11,7 +11,9 @@
     }
   },
   "github": {
-    "silent": true
+    "silent": true,
+    "autoJobCancelation": true,
+    "autoAlias": false
   },
   "rewrites": [
     {

@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "type": "module",
+  "description": "Modern full-stack developer portfolio built with Vue 3 Composition API, TypeScript, and Vite. Features i18n support, accessibility, Google Analytics integration, and comprehensive test coverage (333 tests, 86.57% coverage).",
   "engines": {
     "node": "^20.19.0 || >=22.12.0"
   },

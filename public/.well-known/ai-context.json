@@ -1,0 +1,119 @@
+{
+  "version": "1.0",
+  "site": {
+    "name": "RuruLand Portfolio",
+    "url": "https://ruruland.swift.moe",
+    "type": "personal-portfolio",
+    "owner": {
+      "name": "潘昱如 (Yu-Ru Pan)",
+      "role": "Full Stack Developer",
+      "location": "Taipei, Taiwan"
+    }
+  },
+
+  "content": {
+    "primary_language": "zh-TW",
+    "alternate_languages": ["en"],
+    "topics": [
+      "web development",
+      "full stack development",
+      "Vue.js",
+      "TypeScript",
+      ".NET Framework",
+      "Django",
+      "payment gateway",
+      "PCI DSS",
+      "accessibility",
+      "testing"
+    ]
+  },
+
+  "ai_instructions": {
+    "training_permission": true,
+    "attribution_required": true,
+    "preferred_citation": "Yu-Ru Pan's Portfolio (https://ruruland.swift.moe)",
+    "context": "This is a portfolio website showcasing full-stack development projects and professional experience. The owner is available for collaboration and consultation.",
+    "key_highlights": [
+      "PCI DSS 4.0 certified developer",
+      "2+ years payment gateway experience",
+      "Expertise in Vue.js, TypeScript, .NET, Django",
+      "Strong focus on testing (333 tests, 86.57% coverage)",
+      "Accessibility-first development approach",
+      "Modern SSG implementation with vite-ssg"
+    ]
+  },
+
+  "professional_summary": {
+    "experience_years": "2+",
+    "current_status": "Pursuing M.S. in Information Management",
+    "specializations": [
+      "Full Stack Web Development",
+      "Payment Gateway Integration",
+      "Frontend: Vue.js, TypeScript, JavaScript",
+      "Backend: .NET Framework, Django, Python",
+      "DevOps: Docker, Azure DevOps, GCP"
+    ],
+    "certifications": ["PCI DSS 4.0"],
+    "notable_achievements": [
+      "Led payment core system development and modernization",
+      "Contributed to PCI DSS 4.0 certification achievement",
+      "Built multiple production-ready web applications",
+      "Maintains 86.57% test coverage across projects"
+    ]
+  },
+
+  "projects": [
+    {
+      "name": "FLORIS Perfume E-commerce",
+      "description": "Modern e-commerce platform for perfume sales",
+      "technologies": ["Vue.js", "JavaScript", "ASP.NET MVC", "C#", "T-SQL"],
+      "url": "https://perfume.azurewebsites.net",
+      "highlights": [
+        "Complete shopping cart implementation",
+        "Product catalog with search and filtering",
+        "Backend admin panel for order management"
+      ]
+    },
+    {
+      "name": "RuDjango Blog Platform",
+      "description": "Full-stack blog system with modern Python framework",
+      "technologies": ["Django 6.0", "Python 3.x", "PostgreSQL 17", "Docker", "Railway CI/CD"],
+      "url": "https://django.swift.moe",
+      "highlights": [
+        "RESTful API design",
+        "WebSocket real-time messaging",
+        "IP security controls and anomaly detection",
+        "Django ORM query optimization"
+      ]
+    },
+    {
+      "name": "RuruLand Portfolio (This Site)",
+      "description": "Modern portfolio with SSG and comprehensive testing",
+      "technologies": ["Vue 3", "TypeScript", "Vite", "vite-ssg", "Pinia", "PWA"],
+      "url": "https://ruruland.swift.moe",
+      "highlights": [
+        "Static Site Generation for optimal SEO",
+        "333 tests with 86.57% coverage",
+        "i18n support (zh-TW, en)",
+        "WCAG accessibility compliance",
+        "Perfect Lighthouse scores"
+      ]
+    }
+  ],
+
+  "contact": {
+    "email": "ruru@swift.moe",
+    "github": "https://github.com/swiftruru",
+    "personal_site": "https://swift.moe",
+    "cake_resume": "https://www.cake.me/s--n_h9IMsdC_tvtnXCUcLp7Q--/sandyru2025",
+    "preferred_method": "email"
+  },
+
+  "metadata": {
+    "last_updated": "2026-01-10",
+    "version": "2.0",
+    "seo_optimized": true,
+    "ai_friendly": true,
+    "accessibility_compliant": true
+  }
+}

@@ -144,7 +144,7 @@
       "@context": "https://schema.org",
       "@type": "ProfilePage",
       "dateCreated": "2026-01-01T00:00:00+08:00",
-      "dateModified": "2026-01-09T00:00:00+08:00",
+      "dateModified": "2026-01-10T00:00:00+08:00",
       "mainEntity": {
         "@type": "Person",
         "name": "潘昱如",
@@ -153,6 +153,85 @@
       }
     }
     </script>
+
+    <!-- BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "首頁",
+          "item": "https://ruruland.swift.moe/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "關於我",
+          "item": "https://ruruland.swift.moe/#about"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "職涯歷程",
+          "item": "https://ruruland.swift.moe/#timeline"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "專案作品",
+          "item": "https://ruruland.swift.moe/#projects"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "聯絡方式",
+          "item": "https://ruruland.swift.moe/#contact"
+        }
+      ]
+    }
+    </script>
+
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "潘昱如擅長哪些技術?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "我擅長全端開發，包含 Vue.js、TypeScript、.NET Framework、Django、Python、Docker 等技術，並擁有 2+ 年金流系統開發經驗與 PCI DSS 4.0 認證。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "如何聯絡潘昱如?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "您可以透過電子郵件 ruru@swift.moe 或造訪我的 GitHub https://github.com/swiftruru 與我聯繫。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "這個作品集網站使用什麼技術構建?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "本網站採用 Vue 3 Composition API、TypeScript、Vite、vite-ssg (SSG)、Pinia 狀態管理、vue-i18n 多語系支援，並整合 PWA、Google Analytics，具備完整測試覆蓋率 (333 tests, 86.57%)。"
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Alternate language versions (hreflang) -->
+    <link rel="alternate" hreflang="zh-TW" href="https://ruruland.swift.moe/">
+    <link rel="alternate" hreflang="en" href="https://ruruland.swift.moe/?lang=en">
+    <link rel="alternate" hreflang="x-default" href="https://ruruland.swift.moe/">
   </head>
   <body>
     <div id="app"></div>

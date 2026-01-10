@@ -5,6 +5,14 @@
   <url>
     <loc>https://ruruland.swift.moe/</loc>
 
+    <!-- Open Graph Image -->
+    <image:image>
+      <image:loc>https://ruruland.swift.moe/images/og-image.jpg</image:loc>
+      <image:caption>RuruLand Portfolio 社群分享預覽圖 - 展示 Full Stack Developer 潘昱如的專業作品集</image:caption>
+      <image:geo_location>Taipei, Taiwan</image:geo_location>
+      <image:title>RuruLand Portfolio Open Graph Image</image:title>
+    </image:image>
+
     <!-- Profile Photo -->
     <image:image>
       <image:loc>https://ruruland.swift.moe/images/profile.jpg</image:loc>

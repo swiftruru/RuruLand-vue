@@ -73,7 +73,18 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
+
+      // Primary domain: ruruland.swift.moe
       gtag('config', 'G-Q4RFNMK35D', {
+        'anonymize_ip': true,
+        'cookie_flags': 'SameSite=None;Secure',
+        'cookie_expires': 63072000,
+        'allow_google_signals': false,
+        'allow_ad_personalization_signals': false
+      });
+
+      // Secondary domain: portfolio.swift.moe
+      gtag('config', 'G-XHLVG2TPZ8', {
         'anonymize_ip': true,
         'cookie_flags': 'SameSite=None;Secure',
         'cookie_expires': 63072000,

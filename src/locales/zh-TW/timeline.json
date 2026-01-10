@@ -54,19 +54,22 @@
         "完整學習前端技術 HTML / CSS / JavaScript / Vue.js 及 Azure DevOps 部署流程"
       ]
     },
+    "django": {
+      "title": "Django 後端開發實戰",
+      "period": "2025/12 - 2026/03",
+      "description": [
+        "學習 Django 專案全端開發流程，涵蓋虛擬環境建置、架構設計至部署上線",
+        "掌握 MTV 架構模式、路由配置、Template 模板系統與 ORM 資料庫操作",
+        "實作電商網站專題，涵蓋完整購物流程與後台管理系統"
+      ]
+    },
     "peterPan": {
       "title": "彼得潘的 iOS App 程式設計入門",
-      "period": "2024/11 - 2025/03",
+      "period": "2022/07/07 - 2022/08/25",
       "description": [
-        "完整學習 Swift 程式語言基礎，包含 function、class、struct、protocol、closure 等核心概念",
-        "掌握 iOS App UI 開發技術，涵蓋 Storyboard 視覺化設計、Auto Layout 自適應佈局、程式化 UI 與 xib 元件開發",
-        "實作 MVC / MVVM 架構設計模式，建立良好的程式碼分層與可維護性",
-        "開發 UITableView 表格元件，熟悉 Data Source 資料源模式與表格的新增、刪除、編輯操作",
-        "實作頁面導覽與資料傳遞機制，包含 Segue、Delegate、Closure、Notification Center 等多種傳值方式",
-        "學習網路程式設計與 RESTful API 串接技術",
-        "理解 ARC 記憶體管理機制與 View Controller 生命週期",
-        "實作 Core Data 本地資料存儲與定位功能",
-        "接觸 Flutter 跨平台開發框架入門"
+        "完整學習 Swift 語言基礎與 iOS App UI 開發技術（Storyboard、Auto Layout、程式化 UI）",
+        "掌握 MVC / MVVM 架構模式、UITableView 元件開發與多種資料傳遞機制實作",
+        "學習網路程式設計、RESTful API 串接、Core Data 資料存儲與定位功能"
       ]
     }
   },

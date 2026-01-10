@@ -85,6 +85,22 @@
               </div>
             </div>
 
+            <!-- Django 後端開發實戰 -->
+            <div class="timeline-item fade-right delay-200">
+              <div class="timeline-marker"></div>
+              <div class="timeline-card">
+                <div class="timeline-header">
+                  <h4 class="timeline-job-title">{{ t('timeline.education.django.title') }}</h4>
+                  <span class="timeline-period">{{ t('timeline.education.django.period') }}</span>
+                </div>
+                <ul class="timeline-description">
+                  <li v-for="(desc, index) in djangoDescriptions" :key="index">
+                    {{ desc }}
+                  </li>
+                </ul>
+              </div>
+            </div>
+
             <!-- Peter Pan iOS 課程 -->
             <div class="timeline-item fade-right delay-300">
               <div class="timeline-marker"></div>
@@ -172,6 +188,14 @@ const masterDescriptions = computed(() => {
   const desc = tm('timeline.education.master.description')
   if (Array.isArray(desc)) {
     return desc.map((_, index) => t(`timeline.education.master.description.${index}`))
+  }
+  return []
+})
+
+const djangoDescriptions = computed(() => {
+  const desc = tm('timeline.education.django.description')
+  if (Array.isArray(desc)) {
+    return desc.map((_, index) => t(`timeline.education.django.description.${index}`))
   }
   return []
 })

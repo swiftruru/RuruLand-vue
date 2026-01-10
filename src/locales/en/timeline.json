@@ -54,19 +54,22 @@
         "Completed frontend technology stack including HTML / CSS / JavaScript / Vue.js and Azure DevOps deployment workflow"
       ]
     },
+    "django": {
+      "title": "Django Backend Development Bootcamp",
+      "period": "2025/12 - 2026/03",
+      "description": [
+        "Learned Django full-stack development workflow from virtual environment setup, architecture design to deployment",
+        "Mastered MTV architecture pattern, URL routing, template system, and ORM database operations",
+        "Built e-commerce website project with complete shopping flow and backend management system"
+      ]
+    },
     "peterPan": {
       "title": "Peter Pan iOS App Development Bootcamp",
-      "period": "2024/11 - 2025/03",
+      "period": "2022/07/07 - 2022/08/25",
       "description": [
-        "Comprehensive Swift programming fundamentals including functions, classes, structs, protocols, and closures",
-        "Mastered iOS App UI development with Storyboard visual design, Auto Layout, programmatic UI, and xib components",
-        "Implemented MVC / MVVM architecture patterns for well-structured and maintainable code",
-        "Developed UITableView components with Data Source patterns and CRUD operations",
-        "Implemented navigation and data passing mechanisms using Segue, Delegate, Closure, and Notification Center",
-        "Learned network programming and RESTful API integration techniques",
-        "Understood ARC memory management and View Controller lifecycle",
-        "Implemented Core Data local storage and location-based features",
-        "Explored Flutter cross-platform development framework"
+        "Comprehensive Swift programming fundamentals and iOS App UI development (Storyboard, Auto Layout, programmatic UI)",
+        "Mastered MVC / MVVM architecture patterns, UITableView component development, and multiple data passing mechanisms",
+        "Learned network programming, RESTful API integration, Core Data local storage, and location-based features"
       ]
     }
   },

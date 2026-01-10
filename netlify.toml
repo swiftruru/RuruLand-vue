@@ -1,0 +1,14 @@
+[build]
+  command = "npm run test:run && npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"
+  VITE_GA_MEASUREMENT_ID = "G-Q4RFNMK35D"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Headers are configured in public/_headers file

@@ -1,5 +1,9 @@
 # 🌿 RuruLand Portfolio
 
+[![CI/CD Pipeline](https://github.com/swiftruru/RuruLand-vue/actions/workflows/ci.yml/badge.svg)](https://github.com/swiftruru/RuruLand-vue/actions/workflows/ci.yml)
+[![Test](https://github.com/swiftruru/RuruLand-vue/actions/workflows/test.yml/badge.svg)](https://github.com/swiftruru/RuruLand-vue/actions/workflows/test.yml)
+[![Deploy](https://github.com/swiftruru/RuruLand-vue/actions/workflows/deploy.yml/badge.svg)](https://github.com/swiftruru/RuruLand-vue/actions/workflows/deploy.yml)
+
 ![Vue.js](https://img.shields.io/badge/Vue.js-3.5-2d7a52?style=for-the-badge&logo=vue.js&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.9-1a5f3f?style=for-the-badge&logo=typescript&logoColor=white)
 ![Vite](https://img.shields.io/badge/Vite-7.3-3a9664?style=for-the-badge&logo=vite&logoColor=white)

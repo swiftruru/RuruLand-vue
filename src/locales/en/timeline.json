@@ -53,6 +53,21 @@
         "60 hours per week intensive training, comprehensive learning of C#, Object-Oriented Programming, ASP.NET MVC enterprise development",
         "Completed frontend technology stack including HTML / CSS / JavaScript / Vue.js and Azure DevOps deployment workflow"
       ]
+    },
+    "peterPan": {
+      "title": "Peter Pan iOS App Development Bootcamp",
+      "period": "2024/11 - 2025/03",
+      "description": [
+        "Comprehensive Swift programming fundamentals including functions, classes, structs, protocols, and closures",
+        "Mastered iOS App UI development with Storyboard visual design, Auto Layout, programmatic UI, and xib components",
+        "Implemented MVC / MVVM architecture patterns for well-structured and maintainable code",
+        "Developed UITableView components with Data Source patterns and CRUD operations",
+        "Implemented navigation and data passing mechanisms using Segue, Delegate, Closure, and Notification Center",
+        "Learned network programming and RESTful API integration techniques",
+        "Understood ARC memory management and View Controller lifecycle",
+        "Implemented Core Data local storage and location-based features",
+        "Explored Flutter cross-platform development framework"
+      ]
     }
   },
   "certifications": {

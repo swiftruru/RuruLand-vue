@@ -85,8 +85,24 @@
               </div>
             </div>
 
-            <!-- Build School 培訓 -->
+            <!-- Peter Pan iOS 課程 -->
             <div class="timeline-item fade-right delay-300">
+              <div class="timeline-marker"></div>
+              <div class="timeline-card">
+                <div class="timeline-header">
+                  <h4 class="timeline-job-title">{{ t('timeline.education.peterPan.title') }}</h4>
+                  <span class="timeline-period">{{ t('timeline.education.peterPan.period') }}</span>
+                </div>
+                <ul class="timeline-description">
+                  <li v-for="(desc, index) in peterPanDescriptions" :key="index">
+                    {{ desc }}
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Build School 培訓 -->
+            <div class="timeline-item fade-right delay-400">
               <div class="timeline-marker"></div>
               <div class="timeline-card">
                 <div class="timeline-header">
@@ -164,6 +180,14 @@ const buildSchoolDescriptions = computed(() => {
   const desc = tm('timeline.education.buildSchool.description')
   if (Array.isArray(desc)) {
     return desc.map((_, index) => t(`timeline.education.buildSchool.description.${index}`))
+  }
+  return []
+})
+
+const peterPanDescriptions = computed(() => {
+  const desc = tm('timeline.education.peterPan.description')
+  if (Array.isArray(desc)) {
+    return desc.map((_, index) => t(`timeline.education.peterPan.description.${index}`))
   }
   return []
 })

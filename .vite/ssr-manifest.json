@@ -3,7 +3,7 @@
   "\u0000vite/modulepreload-polyfill.js": [],
   "\u0000vite/preload-helper.js": [],
   "../../../../../@vite-plugin-pwa/virtual:pwa-register": [
-    "/assets/virtual_pwa-register-CO6AF3sg.js"
+    "/assets/virtual_pwa-register-D2_TfDhQ.js"
   ],
   "index.html": [],
   "node_modules/@intlify/core-base/dist/core-base.mjs": [],
@@ -67,36 +67,36 @@
   "src/components/SocialShare.vue?vue&type=script&setup=true&lang.ts": [],
   "src/components/SocialShare.vue?vue&type=style&index=0&scoped=8a1a3b21&lang.css": [],
   "src/components/TheWelcome.vue?vue&type=script&setup=true&lang.ts": [
-    "/assets/HomeView-DFZOzWto.js",
+    "/assets/HomeView-CWhS-qWn.js",
     "/assets/HomeView-31Enz3nN.css"
   ],
   "src/components/TimelineSection.vue?vue&type=script&setup=true&lang.ts": [],
   "src/components/WelcomeItem.vue": [
-    "/assets/HomeView-DFZOzWto.js",
+    "/assets/HomeView-CWhS-qWn.js",
     "/assets/HomeView-31Enz3nN.css"
   ],
   "src/components/WelcomeItem.vue?vue&type=style&index=0&scoped=fd0742eb&lang.css": [
-    "/assets/HomeView-DFZOzWto.js",
+    "/assets/HomeView-CWhS-qWn.js",
     "/assets/HomeView-31Enz3nN.css"
   ],
   "src/components/icons/IconCommunity.vue": [
-    "/assets/HomeView-DFZOzWto.js",
+    "/assets/HomeView-CWhS-qWn.js",
     "/assets/HomeView-31Enz3nN.css"
   ],
   "src/components/icons/IconDocumentation.vue": [
-    "/assets/HomeView-DFZOzWto.js",
+    "/assets/HomeView-CWhS-qWn.js",
     "/assets/HomeView-31Enz3nN.css"
   ],
   "src/components/icons/IconEcosystem.vue": [
-    "/assets/HomeView-DFZOzWto.js",
+    "/assets/HomeView-CWhS-qWn.js",
     "/assets/HomeView-31Enz3nN.css"
   ],
   "src/components/icons/IconSupport.vue": [
-    "/assets/HomeView-DFZOzWto.js",
+    "/assets/HomeView-CWhS-qWn.js",
     "/assets/HomeView-31Enz3nN.css"
   ],
   "src/components/icons/IconTooling.vue": [
-    "/assets/HomeView-DFZOzWto.js",
+    "/assets/HomeView-CWhS-qWn.js",
     "/assets/HomeView-31Enz3nN.css"
   ],
   "src/composables/useCursorEffect.ts": [],
@@ -136,11 +136,11 @@
   "src/styles/print.css": [],
   "src/styles/variables.css": [],
   "src/views/HomeView.vue": [
-    "/assets/HomeView-DFZOzWto.js",
+    "/assets/HomeView-CWhS-qWn.js",
     "/assets/HomeView-31Enz3nN.css"
   ],
   "src/views/HomeView.vue?vue&type=script&setup=true&lang.ts": [
-    "/assets/HomeView-DFZOzWto.js",
+    "/assets/HomeView-CWhS-qWn.js",
     "/assets/HomeView-31Enz3nN.css"
   ]
 }

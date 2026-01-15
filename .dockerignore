@@ -1,0 +1,79 @@
+# =============================================================================
+# Docker Ignore File
+# =============================================================================
+# Excludes files not needed in the Docker build context
+# This reduces build time and image size
+# =============================================================================
+
+# Dependencies (will be installed fresh in container)
+node_modules/
+.pnpm-store/
+
+# Build outputs (will be generated in container)
+dist/
+dist-ssr/
+
+# Test and coverage
+coverage/
+.nyc_output/
+*.lcov
+
+# Development tools
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Git
+.git/
+.gitignore
+.gitattributes
+
+# Environment files (sensitive data)
+.env
+.env.local
+.env.*.local
+.env.development
+.env.production
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Documentation (not needed for runtime)
+*.md
+!docker/README.md
+LICENSE
+CHANGELOG.md
+docs/
+
+# CI/CD configurations
+.github/
+.gitlab-ci.yml
+.travis.yml
+Jenkinsfile
+
+# Docker files (avoid recursive copy)
+Dockerfile*
+docker-compose*.yml
+.dockerignore
+
+# Misc
+*.tgz
+*.tar.gz
+*.zip
+.editorconfig
+.eslintcache
+.stylelintcache
+.prettierrc*
+eslint.config.*
+vitest.config.*
+vite.config.timestamp*

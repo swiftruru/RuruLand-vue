@@ -8,6 +8,7 @@
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.9-1a5f3f?style=for-the-badge&logo=typescript&logoColor=white)
 ![Vite](https://img.shields.io/badge/Vite-7.3-3a9664?style=for-the-badge&logo=vite&logoColor=white)
 ![Pinia](https://img.shields.io/badge/Pinia-3.0-4caf50?style=for-the-badge&logo=pinia&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-Ready-2496ED?style=for-the-badge&logo=docker&logoColor=white)
 
 ## 現代化全端開發者個人履歷網站
 
@@ -163,6 +164,33 @@ npm run build
 npm run preview
 ```
 
+### Docker 部署（可選）
+
+本專案支援 Docker 容器化部署，適用於自建伺服器或企業內網環境。
+
+```bash
+# 方式一：使用 Docker Compose（推薦）
+docker compose up -d
+
+# 方式二：手動建置並執行
+docker build -t ruruland-portfolio .
+docker run -d -p 3000:80 ruruland-portfolio
+
+# 訪問網站
+# http://localhost:3000
+```
+
+**Docker 部署特點：**
+
+- 🏗️ **Multi-stage build** - 優化映像大小（約 25MB）
+- 🚀 **Nginx 靜態服務** - 高效能靜態檔案服務
+- 🔒 **Security Headers** - 內建安全標頭（CSP、HSTS、X-Frame-Options）
+- 📦 **Gzip 壓縮** - 自動壓縮靜態資源
+- 💾 **智慧快取** - JS/CSS 永久快取，HTML 不快取
+- ❤️ **健康檢查** - 內建容器健康監控
+
+> 💡 **提示**：主要部署仍建議使用 Netlify（享有全球 CDN、自動 HTTPS、零配置 CI/CD）。Docker 適用於需要完全控制部署環境的場景。
+
 ### 開發指令
 
 ```bash
@@ -225,7 +253,14 @@ RuruLand-vue/
 │   ├── App.vue                      # 根組件
 │   └── main.ts                      # 應用入口
 │
+├── docker/                          # Docker 設定
+│   ├── nginx.conf                   # Nginx 主設定
+│   └── default.conf                 # Nginx 站點設定
+│
 ├── .npmrc                           # npm 專案設定
+├── .dockerignore                    # Docker 忽略檔案
+├── Dockerfile                       # Docker 映像定義
+├── docker-compose.yml               # Docker Compose 設定
 ├── vite.config.ts                   # Vite 設定
 ├── tsconfig.json                    # TypeScript 設定
 ├── package.json                     # 專案依賴

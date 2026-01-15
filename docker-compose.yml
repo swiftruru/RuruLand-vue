@@ -1,0 +1,79 @@
+# =============================================================================
+# Docker Compose - RuruLand Portfolio
+# =============================================================================
+# One-command deployment for local development and production testing
+#
+# Usage:
+#   docker compose up              # Start in foreground
+#   docker compose up -d           # Start in background (detached)
+#   docker compose up --build      # Rebuild and start
+#   docker compose down            # Stop and remove containers
+#   docker compose logs -f         # View logs
+#
+# Access: http://localhost:3000
+# =============================================================================
+
+services:
+  web:
+    # Build configuration
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - VITE_GA_MEASUREMENT_ID=G-Q4RFNMK35D
+
+    # Container settings
+    container_name: ruruland-portfolio
+    restart: unless-stopped
+
+    # Port mapping: host:container
+    ports:
+      - "3000:80"
+
+    # Environment variables (optional overrides)
+    environment:
+      - TZ=Asia/Taipei
+
+    # Resource limits (optional, uncomment if needed)
+    # deploy:
+    #   resources:
+    #     limits:
+    #       cpus: '0.5'
+    #       memory: 128M
+    #     reservations:
+    #       cpus: '0.25'
+    #       memory: 64M
+
+    # Health check
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost/"]
+      interval: 30s
+      timeout: 3s
+      retries: 3
+      start_period: 5s
+
+    # Logging configuration
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+    # Labels for documentation
+    labels:
+      - "com.ruruland.description=RuruLand Portfolio Website"
+      - "com.ruruland.maintainer=Yu-Ru Pan <ruru@swift.moe>"
+
+# =============================================================================
+# Development Override (optional)
+# =============================================================================
+# Create docker-compose.override.yml for local development:
+#
+# services:
+#   web:
+#     build:
+#       args:
+#         - VITE_GA_MEASUREMENT_ID=G-DEV-ID
+#     ports:
+#       - "8080:80"
+# =============================================================================

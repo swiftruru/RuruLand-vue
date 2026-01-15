@@ -1,4 +1,4 @@
-# 🌿 RuruLand Portfolio
+# 🌿 Yu-Ru Pan | Portfolio
 
 [![CI/CD Pipeline](https://github.com/swiftruru/RuruLand-vue/actions/workflows/ci.yml/badge.svg)](https://github.com/swiftruru/RuruLand-vue/actions/workflows/ci.yml)
 [![Test](https://github.com/swiftruru/RuruLand-vue/actions/workflows/test.yml/badge.svg)](https://github.com/swiftruru/RuruLand-vue/actions/workflows/test.yml)
@@ -425,7 +425,7 @@ Full Stack Developer
 
 ## 📄 授權
 
-Copyright © 2026 Ruru's Portfolio. All rights reserved.
+Copyright © 2026 Yu-Ru Pan. All rights reserved.
 
 ---
 
@@ -434,7 +434,7 @@ Copyright © 2026 Ruru's Portfolio. All rights reserved.
 **Built with ❤️ using Vue 3 + TypeScript + Vite**
 
 <p>
-  <sub>Made by <a href="https://github.com/yourusername">@Ruru</a></sub>
+  <sub>Made by <a href="https://github.com/swiftruru">@Yu-Ru Pan</a></sub>
 </p>
 
 </div>
